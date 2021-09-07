@@ -1,10 +1,3 @@
-//
-//  MovieAppTests.swift
-//  MovieAppTests
-//
-//  Created by Bruno Krolo on 07.09.2021..
-//
-
 import XCTest
 @testable import MovieApp
 

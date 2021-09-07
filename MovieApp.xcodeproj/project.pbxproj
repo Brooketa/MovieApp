@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70B404A626E77FFA0012F23E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 70B404A526E77FFA0012F23E /* Alamofire */; };
 		70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */; };
 		70E57C9E26E73C8600A5E9D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9D26E73C8600A5E9D2 /* SceneDelegate.swift */; };
 		70E57CA026E73C8600A5E9D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9F26E73C8600A5E9D2 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		70E57CA826E73C8700A5E9D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70E57CA626E73C8700A5E9D2 /* LaunchScreen.storyboard */; };
 		70E57CB326E73C8700A5E9D2 /* MovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57CB226E73C8700A5E9D2 /* MovieAppTests.swift */; };
 		70E57CBE26E73C8800A5E9D2 /* MovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57CBD26E73C8800A5E9D2 /* MovieAppUITests.swift */; };
+		70E57CCD26E75BC600A5E9D2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 70E57CCC26E75BC600A5E9D2 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E57CCD26E75BC600A5E9D2 /* SnapKit in Frameworks */,
+				70B404A626E77FFA0012F23E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				70E57CB126E73C8700A5E9D2 /* MovieAppTests */,
 				70E57CBC26E73C8800A5E9D2 /* MovieAppUITests */,
 				70E57C9926E73C8600A5E9D2 /* Products */,
+				70E57CD326E762B600A5E9D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +133,13 @@
 			path = MovieAppUITests;
 			sourceTree = "<group>";
 		};
+		70E57CD326E762B600A5E9D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +147,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70E57CC226E73C8800A5E9D2 /* Build configuration list for PBXNativeTarget "MovieApp" */;
 			buildPhases = (
+				70B404A326E77D950012F23E /* ShellScript */,
 				70E57C9426E73C8600A5E9D2 /* Sources */,
 				70E57C9526E73C8600A5E9D2 /* Frameworks */,
 				70E57C9626E73C8600A5E9D2 /* Resources */,
@@ -144,6 +157,10 @@
 			dependencies = (
 			);
 			name = MovieApp;
+			packageProductDependencies = (
+				70E57CCC26E75BC600A5E9D2 /* SnapKit */,
+				70B404A526E77FFA0012F23E /* Alamofire */,
+			);
 			productName = MovieApp;
 			productReference = 70E57C9826E73C8600A5E9D2 /* MovieApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +232,11 @@
 				Base,
 			);
 			mainGroup = 70E57C8F26E73C8600A5E9D2;
+			packageReferences = (
+				70E57CCB26E75BC600A5E9D2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				70B404A226E7656A0012F23E /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				70B404A426E77FFA0012F23E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 70E57C9926E73C8600A5E9D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +274,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		70B404A326E77D950012F23E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		70E57C9426E73C8600A5E9D2 /* Sources */ = {
@@ -593,6 +635,46 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70B404A226E7656A0012F23E /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.43.1;
+			};
+		};
+		70B404A426E77FFA0012F23E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		70E57CCB26E75BC600A5E9D2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70B404A526E77FFA0012F23E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70B404A426E77FFA0012F23E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		70E57CCC26E75BC600A5E9D2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70E57CCB26E75BC600A5E9D2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 70E57C9026E73C8600A5E9D2 /* Project object */;
 }

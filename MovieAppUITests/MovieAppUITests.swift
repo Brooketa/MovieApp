@@ -1,10 +1,3 @@
-//
-//  MovieAppUITests.swift
-//  MovieAppUITests
-//
-//  Created by Bruno Krolo on 07.09.2021..
-//
-
 import XCTest
 
 class MovieAppUITests: XCTestCase {
