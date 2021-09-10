@@ -1,3 +1,4 @@
+import Combine
 import UIKit
 
 @main
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let homeViewController = HomeViewController(with: HomepagePresenter())
         navigationController.viewControllers = [homeViewController]
+
         return true
     }
 

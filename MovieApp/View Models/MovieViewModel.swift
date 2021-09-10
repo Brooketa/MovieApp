@@ -1,6 +1,6 @@
 import UIKit
 
-struct MovieViewModel {
+struct MovieViewModel: Codable {
 
     let movieTitle: String
     let movieDescription: String
@@ -10,6 +10,12 @@ struct MovieViewModel {
         self.movieTitle = movieTitle
         self.movieDescription = movieDescription
         self.movieImageURL = movieImageURL
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case movieTitle = "title"
+        case movieDescription = "overview"
+        case movieImageURL = "poster_path"
     }
 
 }
