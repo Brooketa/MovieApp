@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
-
         guard let window = window else { return false }
 
         appModule.start(in: window)

@@ -11,12 +11,13 @@ class AppModule {
         return container
     }()
 
-    func start(in window: UIWindow) {
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+    private lazy var appRouter: AppRouter = {
+        container.resolve()
+    }()
 
-        let homepageViewController: HomeViewController = container.resolve()
-        navigationController.setViewControllers([homepageViewController], animated: true)
+    func start(in window: UIWindow) {
+        appRouter.start(in: window)
+        appRouter.showHome()
     }
 
 }
@@ -30,6 +31,7 @@ private extension AppModule {
         registerUseCases(in: container)
         registerPresenters(in: container)
         registerViewControllers(in: container)
+        registerAppRouter(in: container)
     }
 
     private func registerClients(in container: Resolver) {
@@ -70,6 +72,16 @@ private extension AppModule {
         container
             .register { HomeViewController(presenter: container.resolve()) }
             .scope(.unique)
+    }
+
+
+    private func registerAppRouter(in container: Resolver) {
+        container
+            .register {
+                AppRouter(container: container)
+            }
+            .implements(AppRouterProtocol.self)
+            .scope(.application)
     }
 
 }

@@ -1,0 +1,5 @@
+protocol AppRouterProtocol {
+
+    func showHome()
+
+}
