@@ -28,7 +28,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
 
     public func set(viewModel: MovieViewModel) {
-        movieImageView.kf.setImage(with: viewModel.movieImageURL)
+        movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
         movieTitleLabel.text = viewModel.movieTitle
         movieDescriptionLabel.text = viewModel.movieDescription
     }

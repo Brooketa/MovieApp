@@ -1,5 +1,3 @@
-import Foundation
-
 struct MovieClientModel: Codable {
 
     let movieTitle: String

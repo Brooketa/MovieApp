@@ -5,7 +5,7 @@ class MovieClient: MovieClientProtocol {
 
     var trendingMovies: AnyPublisher<[MovieClientModel], Error> {
 
-        guard let url = APIConstants.trendingURL else {
+        guard let url = URL(string: APIConstants.trendingURL) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 

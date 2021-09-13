@@ -19,7 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        let homeViewController = HomeViewController(with: HomepagePresenter())
+        let movieUseCase = MovieUseCase(
+            movieRepository: MovieRepository(
+                movieDataSource: MovieDataSource(
+                    movieClient: MovieClient())))
+
+        let homeViewController = HomeViewController(presenter: HomepagePresenter(movieUseCase: movieUseCase))
         navigationController.viewControllers = [homeViewController]
 
         return true

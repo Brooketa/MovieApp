@@ -3,9 +3,18 @@ import UIKit
 
 class HomepagePresenter: NSObject {
 
-    var viewModels = [MovieViewModel]()
+    private let movieUseCase: MovieUseCase
 
-    var fetchMovies: AnyPublisher<[MovieViewModel], Never> {
-            Just(viewModels).eraseToAnyPublisher()
+    var trendingMovies: AnyPublisher<[MovieViewModel], Never> {
+        movieUseCase
+            .trendingMovies
+            .replaceError(with: [])
+            .map { $0.map { MovieViewModel(with: $0) } }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    init(movieUseCase: MovieUseCase) {
+        self.movieUseCase = movieUseCase
     }
 }

@@ -10,7 +10,7 @@ class HomeViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     private var movieViewModels = [MovieViewModel]()
 
-    init(with presenter: HomepagePresenter) {
+    init(presenter: HomepagePresenter) {
         homepagePresenter = presenter
 
         super.init(nibName: nil, bundle: nil)
@@ -26,13 +26,14 @@ class HomeViewController: UIViewController {
         buildViews()
 
         homepagePresenter
-            .fetchMovies
-            .sink(receiveValue: { [weak self] movies in
-                guard let self = self else { return }
+            .trendingMovies
+            .sink(
+                receiveValue: { [weak self] movies in
+                    guard let self = self else { return }
 
-                self.movieViewModels.append(contentsOf: movies)
-                self.collectionView.reloadData()
-            })
+                    self.movieViewModels = movies
+                    self.collectionView.reloadData()
+                })
             .store(in: &cancellables)
     }
 
