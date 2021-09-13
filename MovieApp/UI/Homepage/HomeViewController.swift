@@ -3,9 +3,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let homepagePresenter: HomepagePresenter
-
     var collectionView: UICollectionView!
+
+    private var homepagePresenter: HomepagePresenter!
 
     private var cancellables = Set<AnyCancellable>()
     private var movieViewModels = [MovieViewModel]()

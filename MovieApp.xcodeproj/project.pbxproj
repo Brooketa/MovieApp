@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70532C4026EF4E7C0010AF2F /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 70532C3F26EF4E7C0010AF2F /* Resolver */; };
+		70532C4226EF507D0010AF2F /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532C4126EF507D0010AF2F /* AppModule.swift */; };
 		7054633126EB3E8D00A235AB /* MovieClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054633026EB3E8D00A235AB /* MovieClientModel.swift */; };
 		7054633726EB537C00A235AB /* MovieDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054633626EB537C00A235AB /* MovieDataSource.swift */; };
 		7054633926EB538700A235AB /* MovieDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7054633826EB538700A235AB /* MovieDataSourceProtocol.swift */; };
@@ -57,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70532C4126EF507D0010AF2F /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		7054633026EB3E8D00A235AB /* MovieClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClientModel.swift; sourceTree = "<group>"; };
 		7054633626EB537C00A235AB /* MovieDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSource.swift; sourceTree = "<group>"; };
 		7054633826EB538700A235AB /* MovieDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataSourceProtocol.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70532C4026EF4E7C0010AF2F /* Resolver in Frameworks */,
 				70807FF026E9DEC800FCC5AA /* Kingfisher in Frameworks */,
 				70E57CCD26E75BC600A5E9D2 /* SnapKit in Frameworks */,
 			);
@@ -256,6 +260,7 @@
 				70B404B426E79E0D0012F23E /* UI */,
 				70807FE926E8CD9F00FCC5AA /* View Models */,
 				70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */,
+				70532C4126EF507D0010AF2F /* AppModule.swift */,
 				70E57CA426E73C8700A5E9D2 /* Assets.xcassets */,
 				70E57CA626E73C8700A5E9D2 /* LaunchScreen.storyboard */,
 				70E57CA926E73C8700A5E9D2 /* Info.plist */,
@@ -308,6 +313,7 @@
 			packageProductDependencies = (
 				70E57CCC26E75BC600A5E9D2 /* SnapKit */,
 				70807FEF26E9DEC800FCC5AA /* Kingfisher */,
+				70532C3F26EF4E7C0010AF2F /* Resolver */,
 			);
 			productName = MovieApp;
 			productReference = 70E57C9826E73C8600A5E9D2 /* MovieApp.app */;
@@ -384,6 +390,7 @@
 				70E57CCB26E75BC600A5E9D2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				70B404A226E7656A0012F23E /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				70807FEE26E9DEC800FCC5AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				70532C3E26EF4E7C0010AF2F /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 70E57C9926E73C8600A5E9D2 /* Products */;
 			projectDirPath = "";
@@ -468,6 +475,7 @@
 				70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */,
 				70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */,
 				7054634526EB8FB400A235AB /* MovieUseCase.swift in Sources */,
+				70532C4226EF507D0010AF2F /* AppModule.swift in Sources */,
 				70807FE626E8BD7A00FCC5AA /* UIViewController+Extensions.swift in Sources */,
 				7054633E26EB8C4600A235AB /* MovieRepository.swift in Sources */,
 				7054633B26EB53C900A235AB /* MovieDataSourceModel.swift in Sources */,
@@ -797,6 +805,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		70532C3E26EF4E7C0010AF2F /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.4;
+			};
+		};
 		70807FEE26E9DEC800FCC5AA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -824,6 +840,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		70532C3F26EF4E7C0010AF2F /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70532C3E26EF4E7C0010AF2F /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
 		70807FEF26E9DEC800FCC5AA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70807FEE26E9DEC800FCC5AA /* XCRemoteSwiftPackageReference "Kingfisher" */;

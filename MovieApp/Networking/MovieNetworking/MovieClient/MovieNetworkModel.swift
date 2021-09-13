@@ -1,5 +1,3 @@
-import Foundation
-
 struct MovieNetworkModel: Codable {
 
     let response: [MovieClientModel]

@@ -1,5 +1,3 @@
-import Foundation
-
 struct MovieUseCaseModel {
 
     let movieTitle: String

@@ -1,11 +1,10 @@
-import Combine
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let navigationController = UINavigationController()
+    private let appModule = AppModule()
 
     func application(
         _ application: UIApplication,
@@ -16,16 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         guard let window = window else { return false }
 
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
-
-        let movieUseCase = MovieUseCase(
-            movieRepository: MovieRepository(
-                movieDataSource: MovieDataSource(
-                    movieClient: MovieClient())))
-
-        let homeViewController = HomeViewController(presenter: HomepagePresenter(movieUseCase: movieUseCase))
-        navigationController.viewControllers = [homeViewController]
+        appModule.start(in: window)
 
         return true
     }

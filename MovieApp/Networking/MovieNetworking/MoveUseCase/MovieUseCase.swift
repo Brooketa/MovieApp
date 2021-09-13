@@ -1,5 +1,4 @@
 import Combine
-import Foundation
 
 class MovieUseCase: MovieUseCaseProtocol {
 
