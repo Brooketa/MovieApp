@@ -3,12 +3,21 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    enum Section {
+
+        case main
+
+    }
+
+    private typealias TrendingDataSource = UICollectionViewDiffableDataSource<Section, MovieViewModel>
+    private typealias TrendingSnapshot = NSDiffableDataSourceSnapshot<Section, MovieViewModel>
+
     var collectionView: UICollectionView!
 
     private var homepagePresenter: HomepagePresenter!
+    private var trendingDataSource: TrendingDataSource!
 
     private var cancellables = Set<AnyCancellable>()
-    private var movieViewModels = [MovieViewModel]()
 
     init(presenter: HomepagePresenter) {
         homepagePresenter = presenter
@@ -24,6 +33,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        trendingDataSource = makeTrendingDataSource()
 
         homepagePresenter
             .trendingMovies
@@ -31,42 +41,35 @@ class HomeViewController: UIViewController {
                 receiveValue: { [weak self] movies in
                     guard let self = self else { return }
 
-                    self.movieViewModels = movies
-                    self.collectionView.reloadData()
+                    self.updateTrendingDataSource(with: movies)
                 })
             .store(in: &cancellables)
     }
 
-}
+    private func makeTrendingDataSource() -> TrendingDataSource {
+        TrendingDataSource(
+            collectionView: collectionView,
+            cellProvider: { collectionView, indexPath, movieViewModel in
+                guard
+                    let cell = collectionView.dequeueReusableCell(
+                        withReuseIdentifier: MovieCollectionViewCell.identifier,
+                        for: indexPath) as? MovieCollectionViewCell
+                else {
+                    return UICollectionViewCell()
+                }
 
-extension HomeViewController: UICollectionViewDelegate {
+                cell.set(viewModel: movieViewModel)
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
-
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movieViewModels.count
+                return cell
+            })
     }
 
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
+    private func updateTrendingDataSource(with viewModels: [MovieViewModel]) {
+        var trendingSnapshot = TrendingSnapshot()
+        trendingSnapshot.appendSections([.main])
+        trendingSnapshot.appendItems(viewModels)
 
-        guard
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: MovieCollectionViewCell.identifier,
-                for: indexPath) as? MovieCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
-
-        cell.set(viewModel: movieViewModels[indexPath.row])
-
-        return cell
+        trendingDataSource.apply(trendingSnapshot, animatingDifferences: true, completion: nil)
     }
 
 }

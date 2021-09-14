@@ -1,6 +1,6 @@
 import UIKit
 
-struct MovieViewModel: Codable {
+struct MovieViewModel: Codable, Hashable {
 
     let movieTitle: String
     let movieDescription: String

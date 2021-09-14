@@ -11,8 +11,6 @@ extension HomeViewController: ConstructViewsProtocol {
 
     func createViews() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
-        collectionView.delegate = self
-        collectionView.dataSource = self
         collectionView.register(
             MovieCollectionViewCell.self,
             forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)

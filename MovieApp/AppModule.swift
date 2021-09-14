@@ -74,7 +74,6 @@ private extension AppModule {
             .scope(.unique)
     }
 
-
     private func registerAppRouter(in container: Resolver) {
         container
             .register {
