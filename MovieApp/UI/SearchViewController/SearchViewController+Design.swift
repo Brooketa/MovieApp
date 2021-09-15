@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 
-extension HomeViewController: ConstructViewsProtocol {
+extension SearchViewController: ConstructViewsProtocol {
 
     func buildViews() {
         createViews()

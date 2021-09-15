@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     enum Section {
 
@@ -14,13 +14,13 @@ class HomeViewController: UIViewController {
 
     var collectionView: UICollectionView!
 
-    private var homepagePresenter: HomepagePresenter!
+    private var searchPresenter: SearchPresenter!
     private var trendingDataSource: TrendingDataSource!
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(presenter: HomepagePresenter) {
-        homepagePresenter = presenter
+    init(presenter: SearchPresenter) {
+        searchPresenter = presenter
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         buildViews()
         trendingDataSource = makeTrendingDataSource()
 
-        homepagePresenter
+        searchPresenter
             .trendingMovies
             .sink(
                 receiveValue: { [weak self] movies in

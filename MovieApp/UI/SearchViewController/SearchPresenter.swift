@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class HomepagePresenter: NSObject {
+class SearchPresenter: NSObject {
 
     private let movieUseCase: MovieUseCase
 

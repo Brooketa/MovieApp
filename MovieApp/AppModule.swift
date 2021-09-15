@@ -3,8 +3,6 @@ import Resolver
 
 class AppModule {
 
-    private let navigationController = UINavigationController()
-
     private lazy var container: Resolver = {
         let container = Resolver()
         registerDependencies(in: container)
@@ -64,13 +62,13 @@ private extension AppModule {
 
     private func registerPresenters(in container: Resolver) {
         container
-            .register { HomepagePresenter(movieUseCase: container.resolve()) }
+            .register { SearchPresenter(movieUseCase: container.resolve()) }
             .scope(.unique)
     }
 
     private func registerViewControllers(in container: Resolver) {
         container
-            .register { HomeViewController(presenter: container.resolve()) }
+            .register { SearchViewController(presenter: container.resolve()) }
             .scope(.unique)
     }
 
