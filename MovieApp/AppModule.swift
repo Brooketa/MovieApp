@@ -70,6 +70,10 @@ private extension AppModule {
         container
             .register { SearchViewController(presenter: container.resolve()) }
             .scope(.unique)
+
+        container
+            .register { HomeViewController() }
+            .scope(.unique)
     }
 
     private func registerAppRouter(in container: Resolver) {

@@ -29,10 +29,17 @@
 		70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF326EA343800FCC5AA /* MovieClientProtocol.swift */; };
 		70807FF626EA34DE00FCC5AA /* MovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF526EA34DE00FCC5AA /* MovieClient.swift */; };
 		70807FF826EA3DC200FCC5AA /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF726EA3DC200FCC5AA /* APIConstants.swift */; };
+		709D6A6A26F1F0C500433A2F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6926F1F0C500433A2F /* HomeViewController.swift */; };
+		709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */; };
+		709D6A6F26F1F21A00433A2F /* SubcategoryScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6E26F1F21A00433A2F /* SubcategoryScrollView.swift */; };
+		709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */; };
+		709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7626F22B8300433A2F /* UnderlinedButton.swift */; };
+		709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */; };
 		70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404B626E79E780012F23E /* SearchViewController+Design.swift */; };
 		70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */; };
 		70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404BB26E7A6470012F23E /* MovieCollectionViewCell.swift */; };
 		70B404BE26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404BD26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift */; };
+		70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA24FA26F23A970045B7EA /* Subcategory.swift */; };
 		70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E339BC26EA431F000DC331 /* MovieNetworkModel.swift */; };
 		70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */; };
 		70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9F26E73C8600A5E9D2 /* SearchViewController.swift */; };
@@ -81,10 +88,17 @@
 		70807FF326EA343800FCC5AA /* MovieClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClientProtocol.swift; sourceTree = "<group>"; };
 		70807FF526EA34DE00FCC5AA /* MovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClient.swift; sourceTree = "<group>"; };
 		70807FF726EA3DC200FCC5AA /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		709D6A6926F1F0C500433A2F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
+		709D6A6E26F1F21A00433A2F /* SubcategoryScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryScrollView.swift; sourceTree = "<group>"; };
+		709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubcategoryScrollView+Design.swift"; sourceTree = "<group>"; };
+		709D6A7626F22B8300433A2F /* UnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButton.swift; sourceTree = "<group>"; };
+		709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnderlinedButton+Design.swift"; sourceTree = "<group>"; };
 		70B404B626E79E780012F23E /* SearchViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Design.swift"; sourceTree = "<group>"; };
 		70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		70B404BB26E7A6470012F23E /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		70B404BD26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieCollectionViewCell+Design.swift"; sourceTree = "<group>"; };
+		70DA24FA26F23A970045B7EA /* Subcategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subcategory.swift; sourceTree = "<group>"; };
 		70E339BC26EA431F000DC331 /* MovieNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworkModel.swift; sourceTree = "<group>"; };
 		70E57C9826E73C8600A5E9D2 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,9 +229,32 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		709D6A6826F1F0AE00433A2F /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				709D6A6D26F1F1EE00433A2F /* Components */,
+				709D6A6926F1F0C500433A2F /* HomeViewController.swift */,
+				709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */,
+				70DA24FA26F23A970045B7EA /* Subcategory.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		709D6A6D26F1F1EE00433A2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				709D6A6E26F1F21A00433A2F /* SubcategoryScrollView.swift */,
+				709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */,
+				709D6A7626F22B8300433A2F /* UnderlinedButton.swift */,
+				709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		70B404B426E79E0D0012F23E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				709D6A6826F1F0AE00433A2F /* HomeViewController */,
 				70807FE426E8BD5100FCC5AA /* Extensions */,
 				70B404B526E79E180012F23E /* SearchViewController */,
 				70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */,
@@ -469,25 +506,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7054634226EB8C8200A235AB /* MovieRepositoryModel.swift in Sources */,
+				709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */,
 				70807FE826E8CD4800FCC5AA /* SearchPresenter.swift in Sources */,
 				70807FF826EA3DC200FCC5AA /* APIConstants.swift in Sources */,
 				70807FED26E9D2CB00FCC5AA /* UIColor+Extensions.swift in Sources */,
 				70B404BE26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift in Sources */,
+				709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */,
 				70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */,
 				70807FEB26E8CDB100FCC5AA /* MovieViewModel.swift in Sources */,
 				70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */,
 				7054634726EB8FC600A235AB /* MovieUseCaseProtocol.swift in Sources */,
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
+				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
 				70532C4426EF78E00010AF2F /* AppRouter.swift in Sources */,
 				70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */,
 				70807FF626EA34DE00FCC5AA /* MovieClient.swift in Sources */,
 				7054634926EB8FD600A235AB /* MovieUseCaseModel.swift in Sources */,
+				70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */,
 				7054634026EB8C5E00A235AB /* MovieRepositoryProtocol.swift in Sources */,
 				70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */,
 				7054633726EB537C00A235AB /* MovieDataSource.swift in Sources */,
 				7054633926EB538700A235AB /* MovieDataSourceProtocol.swift in Sources */,
 				7054633126EB3E8D00A235AB /* MovieClientModel.swift in Sources */,
+				709D6A6A26F1F0C500433A2F /* HomeViewController.swift in Sources */,
 				70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */,
+				709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */,
+				709D6A6F26F1F21A00433A2F /* SubcategoryScrollView.swift in Sources */,
 				70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */,
 				7054634526EB8FB400A235AB /* MovieUseCase.swift in Sources */,
 				70532C4626EF802C0010AF2F /* AppRouterProtocol.swift in Sources */,

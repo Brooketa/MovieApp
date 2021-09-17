@@ -6,7 +6,7 @@ extension UIViewController {
         guard let navigationController = navigationController else { return }
 
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.barTintColor = .navBarColor
+        navigationController.navigationBar.barTintColor = .darkBlue
         navigationController.navigationBar.tintColor = .white
         navigationItem.titleView = UIImageView(image: UIImage(named: "tmdb-logo"))
     }

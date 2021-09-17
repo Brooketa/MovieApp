@@ -2,7 +2,8 @@ import UIKit
 
 public extension UIColor {
 
-    static let navBarColor = UIColor(rgb: 0x0B253F)
+    static let darkBlue = UIColor(rgb: 0x0B253F)
+    static let underlinedButtonGray = UIColor(rgb: 0x828282)
 
     private convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

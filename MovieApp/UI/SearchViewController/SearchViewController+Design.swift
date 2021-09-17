@@ -19,7 +19,6 @@ extension SearchViewController: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        setDefaultNavBar()
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
