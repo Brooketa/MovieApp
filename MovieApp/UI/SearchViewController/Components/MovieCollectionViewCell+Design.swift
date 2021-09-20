@@ -28,7 +28,7 @@ extension MovieCollectionViewCell: ConstructViewsProtocol {
         movieDescriptionLabel.textColor = .systemGray
         movieDescriptionLabel.numberOfLines = 0
 
-        configureShadow()
+        addShadow()
         configureRoundedCorners()
     }
 
@@ -50,24 +50,6 @@ extension MovieCollectionViewCell: ConstructViewsProtocol {
             make.left.equalTo(movieImageView.snp.right).offset(15)
             make.right.bottom.equalToSuperview().offset(-20)
         }
-    }
-
-    private func configureShadow() {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 10.0
-        layer.shadowOpacity = 0.1
-        layer.masksToBounds = false
-        layer.shadowPath = UIBezierPath(
-            roundedRect: bounds,
-            cornerRadius: contentView.layer.cornerRadius - 5).cgPath
-    }
-
-    private func configureRoundedCorners() {
-        contentView.layer.cornerRadius = 10.0
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.masksToBounds = true
     }
 
 }

@@ -35,6 +35,8 @@
 		709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */; };
 		709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7626F22B8300433A2F /* UnderlinedButton.swift */; };
 		709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */; };
+		70B3102326F492D8003EB574 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3102226F492D8003EB574 /* FavoriteButton.swift */; };
+		70B3102526F492EB003EB574 /* FavoriteButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3102426F492EB003EB574 /* FavoriteButton+Design.swift */; };
 		70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404B626E79E780012F23E /* SearchViewController+Design.swift */; };
 		70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */; };
 		70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404BB26E7A6470012F23E /* MovieCollectionViewCell.swift */; };
@@ -42,6 +44,9 @@
 		70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA24FA26F23A970045B7EA /* Subcategory.swift */; };
 		70DA250026F345B80045B7EA /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA24FF26F345B80045B7EA /* HomeSectionHeader.swift */; };
 		70DA250226F345CC0045B7EA /* HomeSectionHeader+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA250126F345CC0045B7EA /* HomeSectionHeader+Design.swift */; };
+		70DA250526F34E480045B7EA /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA250426F34E480045B7EA /* HomeCollectionViewCell.swift */; };
+		70DA250726F363710045B7EA /* HomeCollectionView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA250626F363710045B7EA /* HomeCollectionView+Design.swift */; };
+		70DA250A26F364E30045B7EA /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA250926F364E30045B7EA /* UICollectionViewCell.swift */; };
 		70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E339BC26EA431F000DC331 /* MovieNetworkModel.swift */; };
 		70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */; };
 		70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E57C9F26E73C8600A5E9D2 /* SearchViewController.swift */; };
@@ -96,6 +101,8 @@
 		709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubcategoryScrollView+Design.swift"; sourceTree = "<group>"; };
 		709D6A7626F22B8300433A2F /* UnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButton.swift; sourceTree = "<group>"; };
 		709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnderlinedButton+Design.swift"; sourceTree = "<group>"; };
+		70B3102226F492D8003EB574 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		70B3102426F492EB003EB574 /* FavoriteButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteButton+Design.swift"; sourceTree = "<group>"; };
 		70B404B626E79E780012F23E /* SearchViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Design.swift"; sourceTree = "<group>"; };
 		70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructViewsProtocol.swift; sourceTree = "<group>"; };
 		70B404BB26E7A6470012F23E /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +110,9 @@
 		70DA24FA26F23A970045B7EA /* Subcategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subcategory.swift; sourceTree = "<group>"; };
 		70DA24FF26F345B80045B7EA /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
 		70DA250126F345CC0045B7EA /* HomeSectionHeader+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeSectionHeader+Design.swift"; sourceTree = "<group>"; };
+		70DA250426F34E480045B7EA /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		70DA250626F363710045B7EA /* HomeCollectionView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeCollectionView+Design.swift"; sourceTree = "<group>"; };
+		70DA250926F364E30045B7EA /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		70E339BC26EA431F000DC331 /* MovieNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieNetworkModel.swift; sourceTree = "<group>"; };
 		70E57C9826E73C8600A5E9D2 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +222,7 @@
 			children = (
 				70807FE526E8BD7A00FCC5AA /* UIViewController+Extensions.swift */,
 				70807FEC26E9D2CB00FCC5AA /* UIColor+Extensions.swift */,
+				70DA250926F364E30045B7EA /* UICollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,10 +259,21 @@
 			isa = PBXGroup;
 			children = (
 				70DA24FE26F3451E0045B7EA /* HomeSectionHeader */,
+				70DA250326F34E100045B7EA /* HomeColletionViewCell */,
 				70DA24FC26F344D70045B7EA /* SubcategoryScrollView */,
 				70DA24FD26F344E50045B7EA /* UnderlinedButton */,
+				70B3102126F49295003EB574 /* FavoriteButton */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		70B3102126F49295003EB574 /* FavoriteButton */ = {
+			isa = PBXGroup;
+			children = (
+				70B3102226F492D8003EB574 /* FavoriteButton.swift */,
+				70B3102426F492EB003EB574 /* FavoriteButton+Design.swift */,
+			);
+			path = FavoriteButton;
 			sourceTree = "<group>";
 		};
 		70B404B426E79E0D0012F23E /* UI */ = {
@@ -310,6 +332,15 @@
 				70DA250126F345CC0045B7EA /* HomeSectionHeader+Design.swift */,
 			);
 			path = HomeSectionHeader;
+			sourceTree = "<group>";
+		};
+		70DA250326F34E100045B7EA /* HomeColletionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				70DA250426F34E480045B7EA /* HomeCollectionViewCell.swift */,
+				70DA250626F363710045B7EA /* HomeCollectionView+Design.swift */,
+			);
+			path = HomeColletionViewCell;
 			sourceTree = "<group>";
 		};
 		70E57C8F26E73C8600A5E9D2 = {
@@ -538,14 +569,17 @@
 				7054634226EB8C8200A235AB /* MovieRepositoryModel.swift in Sources */,
 				70DA250226F345CC0045B7EA /* HomeSectionHeader+Design.swift in Sources */,
 				709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */,
+				70B3102326F492D8003EB574 /* FavoriteButton.swift in Sources */,
 				70807FE826E8CD4800FCC5AA /* SearchPresenter.swift in Sources */,
 				70807FF826EA3DC200FCC5AA /* APIConstants.swift in Sources */,
 				70807FED26E9D2CB00FCC5AA /* UIColor+Extensions.swift in Sources */,
 				70B404BE26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift in Sources */,
+				70B3102526F492EB003EB574 /* FavoriteButton+Design.swift in Sources */,
 				709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */,
 				70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */,
 				70807FEB26E8CDB100FCC5AA /* MovieViewModel.swift in Sources */,
 				70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */,
+				70DA250726F363710045B7EA /* HomeCollectionView+Design.swift in Sources */,
 				7054634726EB8FC600A235AB /* MovieUseCaseProtocol.swift in Sources */,
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
 				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
@@ -559,12 +593,14 @@
 				7054633726EB537C00A235AB /* MovieDataSource.swift in Sources */,
 				7054633926EB538700A235AB /* MovieDataSourceProtocol.swift in Sources */,
 				7054633126EB3E8D00A235AB /* MovieClientModel.swift in Sources */,
+				70DA250526F34E480045B7EA /* HomeCollectionViewCell.swift in Sources */,
 				709D6A6A26F1F0C500433A2F /* HomeViewController.swift in Sources */,
 				70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */,
 				709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */,
 				709D6A6F26F1F21A00433A2F /* SubcategoryScrollView.swift in Sources */,
 				70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */,
 				7054634526EB8FB400A235AB /* MovieUseCase.swift in Sources */,
+				70DA250A26F364E30045B7EA /* UICollectionViewCell.swift in Sources */,
 				70532C4626EF802C0010AF2F /* AppRouterProtocol.swift in Sources */,
 				70532C4226EF507D0010AF2F /* AppModule.swift in Sources */,
 				70807FE626E8BD7A00FCC5AA /* UIViewController+Extensions.swift in Sources */,

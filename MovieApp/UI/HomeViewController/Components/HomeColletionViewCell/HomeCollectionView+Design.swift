@@ -1,0 +1,35 @@
+import UIKit
+import SnapKit
+
+extension HomeCollectionViewCell: ConstructViewsProtocol {
+
+    func buildViews() {
+        createViews()
+        styleViews()
+    }
+
+    func createViews() {
+        movieImageView = UIImageView()
+        contentView.addSubview(movieImageView)
+
+        favoriteButton = FavoriteButton()
+        contentView.addSubview(favoriteButton)
+    }
+
+    func styleViews() {
+        addShadow()
+        configureRoundedCorners()
+    }
+
+    func defineLayoutForViews() {
+        movieImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        favoriteButton.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().offset(15)
+            make.size.equalTo(25)
+        }
+    }
+
+}
