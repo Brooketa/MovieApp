@@ -2,6 +2,6 @@ import Combine
 
 protocol MovieUseCaseProtocol {
 
-    var trendingMovies: AnyPublisher<[MovieUseCaseModel], Error> { get }
+    func fetchPopularMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error>
 
 }

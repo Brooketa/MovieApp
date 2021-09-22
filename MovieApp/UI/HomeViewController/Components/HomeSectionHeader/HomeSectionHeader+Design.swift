@@ -15,7 +15,7 @@ extension HomeSectionHeader: ConstructViewsProtocol {
         sectionTitleLabel = UILabel()
         stackView.addArrangedSubview(sectionTitleLabel)
 
-        subcategoryScrollView = SubcategoryScrollView(subcategories: subcategories)
+        subcategoryScrollView = SubcategoryScrollView()
         stackView.addArrangedSubview(subcategoryScrollView)
     }
 
@@ -25,7 +25,6 @@ extension HomeSectionHeader: ConstructViewsProtocol {
         stackView.alignment = .fill
         stackView.axis = .vertical
 
-        sectionTitleLabel.text = sectionTitle
         sectionTitleLabel.textColor = .darkBlue
         sectionTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     }

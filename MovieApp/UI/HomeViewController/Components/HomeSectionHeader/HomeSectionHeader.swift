@@ -1,18 +1,21 @@
+import Combine
 import UIKit
 
 class HomeSectionHeader: UICollectionReusableView {
+
+    static let identifier = String(describing: HomeSectionHeader.self)
 
     var stackView: UIStackView!
 
     var sectionTitleLabel: UILabel!
     var subcategoryScrollView: SubcategoryScrollView!
 
-    let sectionTitle: String
-    let subcategories: [Subcategory]
+    var subcategoryTap: AnyPublisher<Subcategory, Never> {
+        subcategoryScrollView
+            .buttonTap
+    }
 
-    init(sectionTitle: String, subcategories: [Subcategory]) {
-        self.sectionTitle = sectionTitle
-        self.subcategories = subcategories
+    override init(frame: CGRect) {
         super.init(frame: .zero)
 
         buildViews()
@@ -24,5 +27,13 @@ class HomeSectionHeader: UICollectionReusableView {
 
     override func didMoveToSuperview() {
         defineLayoutForViews()
+    }
+
+    func setTitle(sectionTitle: String) {
+        sectionTitleLabel.text = sectionTitle
+    }
+
+    func setSubcategories(subcategories: [Subcategory]) {
+        subcategoryScrollView.setSubcategories(subcategories: subcategories)
     }
 }

@@ -34,6 +34,7 @@ extension SearchViewController: ConstructViewsProtocol {
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: view.frame.width * 0.9, height: 140)
+
        return layout
     }
 

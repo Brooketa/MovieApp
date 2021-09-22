@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7020B8A126F886AF00B326E2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020B8A026F886AF00B326E2 /* UIView+Extensions.swift */; };
+		7020B8A526F89E0100B326E2 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7020B8A426F89E0100B326E2 /* HomePresenter.swift */; };
+		70210E1126FB334F00D746AB /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70210E1026FB334F00D746AB /* HomeSection.swift */; };
 		70532C4026EF4E7C0010AF2F /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 70532C3F26EF4E7C0010AF2F /* Resolver */; };
 		70532C4226EF507D0010AF2F /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532C4126EF507D0010AF2F /* AppModule.swift */; };
 		70532C4426EF78E00010AF2F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532C4326EF78E00010AF2F /* AppRouter.swift */; };
@@ -35,6 +38,9 @@
 		709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */; };
 		709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7626F22B8300433A2F /* UnderlinedButton.swift */; };
 		709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */; };
+		70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */; };
+		70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */; };
+		70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BE26FB2D690023EBF1 /* GestureType.swift */; };
 		70B3102326F492D8003EB574 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3102226F492D8003EB574 /* FavoriteButton.swift */; };
 		70B3102526F492EB003EB574 /* FavoriteButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3102426F492EB003EB574 /* FavoriteButton+Design.swift */; };
 		70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B404B626E79E780012F23E /* SearchViewController+Design.swift */; };
@@ -75,6 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7020B8A026F886AF00B326E2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		7020B8A426F89E0100B326E2 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		70210E1026FB334F00D746AB /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		70532C4126EF507D0010AF2F /* AppModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		70532C4326EF78E00010AF2F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		70532C4526EF802C0010AF2F /* AppRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouterProtocol.swift; sourceTree = "<group>"; };
@@ -101,6 +110,9 @@
 		709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubcategoryScrollView+Design.swift"; sourceTree = "<group>"; };
 		709D6A7626F22B8300433A2F /* UnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButton.swift; sourceTree = "<group>"; };
 		709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnderlinedButton+Design.swift"; sourceTree = "<group>"; };
+		70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
+		70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
+		70AB75BE26FB2D690023EBF1 /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
 		70B3102226F492D8003EB574 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		70B3102426F492EB003EB574 /* FavoriteButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavoriteButton+Design.swift"; sourceTree = "<group>"; };
 		70B404B626E79E780012F23E /* SearchViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Design.swift"; sourceTree = "<group>"; };
@@ -156,6 +168,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7020B89826F8790400B326E2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				70AB75C226FB2D6D0023EBF1 /* GesturePublisher */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		70532C4926EF88B10010AF2F /* AppRouter */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +243,7 @@
 				70807FE526E8BD7A00FCC5AA /* UIViewController+Extensions.swift */,
 				70807FEC26E9D2CB00FCC5AA /* UIColor+Extensions.swift */,
 				70DA250926F364E30045B7EA /* UICollectionViewCell.swift */,
+				7020B8A026F886AF00B326E2 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,7 +271,9 @@
 				709D6A6D26F1F1EE00433A2F /* Components */,
 				709D6A6926F1F0C500433A2F /* HomeViewController.swift */,
 				709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */,
+				7020B8A426F89E0100B326E2 /* HomePresenter.swift */,
 				70DA24FA26F23A970045B7EA /* Subcategory.swift */,
+				70210E1026FB334F00D746AB /* HomeSection.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -267,6 +290,16 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		70AB75C226FB2D6D0023EBF1 /* GesturePublisher */ = {
+			isa = PBXGroup;
+			children = (
+				70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */,
+				70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */,
+				70AB75BE26FB2D690023EBF1 /* GestureType.swift */,
+			);
+			path = GesturePublisher;
+			sourceTree = "<group>";
+		};
 		70B3102126F49295003EB574 /* FavoriteButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,8 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				709D6A6826F1F0AE00433A2F /* HomeViewController */,
-				70807FE426E8BD5100FCC5AA /* Extensions */,
 				70B404B526E79E180012F23E /* SearchViewController */,
+				70807FE426E8BD5100FCC5AA /* Extensions */,
 				70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */,
 			);
 			path = UI;
@@ -367,6 +400,7 @@
 		70E57C9A26E73C8600A5E9D2 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				7020B89826F8790400B326E2 /* Shared */,
 				70532C4926EF88B10010AF2F /* AppRouter */,
 				70807FF126EA33F300FCC5AA /* Networking */,
 				70B404B426E79E0D0012F23E /* UI */,
@@ -578,17 +612,22 @@
 				709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */,
 				70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */,
 				70807FEB26E8CDB100FCC5AA /* MovieViewModel.swift in Sources */,
+				7020B8A126F886AF00B326E2 /* UIView+Extensions.swift in Sources */,
 				70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */,
 				70DA250726F363710045B7EA /* HomeCollectionView+Design.swift in Sources */,
 				7054634726EB8FC600A235AB /* MovieUseCaseProtocol.swift in Sources */,
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
+				70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */,
 				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
+				70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */,
 				70532C4426EF78E00010AF2F /* AppRouter.swift in Sources */,
 				70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */,
 				70807FF626EA34DE00FCC5AA /* MovieClient.swift in Sources */,
 				7054634926EB8FD600A235AB /* MovieUseCaseModel.swift in Sources */,
 				70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */,
+				70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */,
 				7054634026EB8C5E00A235AB /* MovieRepositoryProtocol.swift in Sources */,
+				7020B8A526F89E0100B326E2 /* HomePresenter.swift in Sources */,
 				70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */,
 				7054633726EB537C00A235AB /* MovieDataSource.swift in Sources */,
 				7054633926EB538700A235AB /* MovieDataSourceProtocol.swift in Sources */,
@@ -601,6 +640,7 @@
 				70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */,
 				7054634526EB8FB400A235AB /* MovieUseCase.swift in Sources */,
 				70DA250A26F364E30045B7EA /* UICollectionViewCell.swift in Sources */,
+				70210E1126FB334F00D746AB /* HomeSection.swift in Sources */,
 				70532C4626EF802C0010AF2F /* AppRouterProtocol.swift in Sources */,
 				70532C4226EF507D0010AF2F /* AppModule.swift in Sources */,
 				70807FE626E8BD7A00FCC5AA /* UIViewController+Extensions.swift in Sources */,
@@ -777,6 +817,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQC94HBFAG;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,6 +837,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQC94HBFAG;
 				INFOPLIST_FILE = MovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

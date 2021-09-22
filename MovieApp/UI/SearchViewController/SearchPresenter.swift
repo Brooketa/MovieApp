@@ -7,7 +7,7 @@ class SearchPresenter: NSObject {
 
     var trendingMovies: AnyPublisher<[MovieViewModel], Never> {
         movieUseCase
-            .trendingMovies
+            .fetchPopularMovies(subcategory: .action)
             .replaceError(with: [])
             .map { $0.map { MovieViewModel(with: $0) } }
             .receive(on: DispatchQueue.main)

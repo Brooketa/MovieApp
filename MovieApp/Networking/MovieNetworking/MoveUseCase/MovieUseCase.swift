@@ -2,16 +2,27 @@ import Combine
 
 class MovieUseCase: MovieUseCaseProtocol {
 
-    private let movieRepository: MovieRepository
+    private let movieRepository: MovieRepositoryProtocol
 
-    var trendingMovies: AnyPublisher<[MovieUseCaseModel], Error> {
+    func fetchPopularMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
         movieRepository
-            .trendingMovies
-            .map { $0.map { MovieUseCaseModel(from: $0) } }
+            .fetchPopularMovies()
+            .map { $0.compactMap {
+                switch subcategory {
+                case .week, .today:
+                    return MovieUseCaseModel(from: $0)
+                default:
+                    if $0.movieGenres.contains(subcategory.rawValue) {
+                        return MovieUseCaseModel(from: $0)
+                    } else {
+                        return nil
+                    }
+                }
+            } }
             .eraseToAnyPublisher()
     }
 
-    init(movieRepository: MovieRepository) {
+    init(movieRepository: MovieRepositoryProtocol) {
         self.movieRepository = movieRepository
     }
 

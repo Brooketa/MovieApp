@@ -3,9 +3,8 @@ import Foundation
 
 class MovieClient: MovieClientProtocol {
 
-    var trendingMovies: AnyPublisher<[MovieClientModel], Error> {
-
-        guard let url = URL(string: APIConstants.trendingURL) else {
+    func fetchPopularMovies() -> AnyPublisher<[MovieClientModel], Error> {
+        guard let url = URL(string: APIConstants.popularURL) else {
             return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
         }
 

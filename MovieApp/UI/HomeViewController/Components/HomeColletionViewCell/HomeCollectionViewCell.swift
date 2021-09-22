@@ -3,6 +3,8 @@ import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
 
+    static let identifier = String(describing: HomeCollectionViewCell.self)
+
     var movieImageView: UIImageView!
     var favoriteButton: FavoriteButton!
 

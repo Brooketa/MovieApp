@@ -2,16 +2,16 @@ import Combine
 
 class MovieDataSource: MovieDataSourceProtocol {
 
-    private let movieClient: MovieClient
+    private let movieClient: MovieClientProtocol
 
-    var trendingMovies: AnyPublisher<[MovieDataSourceModel], Error> {
+    func fetchPopularMovies() -> AnyPublisher<[MovieDataSourceModel], Error> {
         movieClient
-            .trendingMovies
-            .map { $0.map { MovieDataSourceModel(from: $0) } }
-            .eraseToAnyPublisher()
+                .fetchPopularMovies()
+                .map { $0.map { MovieDataSourceModel(from: $0) } }
+                .eraseToAnyPublisher()
     }
 
-    init(movieClient: MovieClient) {
+    init(movieClient: MovieClientProtocol) {
         self.movieClient = movieClient
     }
 

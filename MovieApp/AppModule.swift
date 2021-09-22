@@ -64,6 +64,10 @@ private extension AppModule {
         container
             .register { SearchPresenter(movieUseCase: container.resolve()) }
             .scope(.unique)
+
+        container
+            .register { HomePresenter(movieUseCase: container.resolve()) }
+            .scope(.unique)
     }
 
     private func registerViewControllers(in container: Resolver) {
@@ -72,7 +76,7 @@ private extension AppModule {
             .scope(.unique)
 
         container
-            .register { HomeViewController() }
+            .register { HomeViewController(presenter: container.resolve()) }
             .scope(.unique)
     }
 

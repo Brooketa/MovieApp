@@ -15,7 +15,6 @@ extension SubcategoryScrollView: ConstructViewsProtocol {
         stackView = UIStackView()
         contentView.addSubview(stackView)
 
-        createButtons()
     }
 
     func styleViews() {
@@ -35,15 +34,6 @@ extension SubcategoryScrollView: ConstructViewsProtocol {
 
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-    }
-
-    private func createButtons() {
-        for subcategory in subcategories {
-            let button = UnderlinedButton(title: subcategory.description)
-            button.setDeselected()
-            subcategoryButtons.append(button)
-            stackView.addArrangedSubview(button)
         }
     }
 

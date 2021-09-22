@@ -2,6 +2,6 @@ import Combine
 
 protocol MovieDataSourceProtocol {
 
-    var trendingMovies: AnyPublisher<[MovieDataSourceModel], Error> { get }
+    func fetchPopularMovies() -> AnyPublisher<[MovieDataSourceModel], Error>
 
 }
