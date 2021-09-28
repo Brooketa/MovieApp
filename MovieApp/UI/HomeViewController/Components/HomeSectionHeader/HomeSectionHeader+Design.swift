@@ -31,7 +31,8 @@ extension HomeSectionHeader: ConstructViewsProtocol {
 
     func defineLayoutForViews() {
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().offset(15)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 

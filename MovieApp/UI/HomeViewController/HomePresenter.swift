@@ -9,13 +9,32 @@ class HomePresenter: NSObject {
         self.movieUseCase = movieUseCase
     }
 
-    func movies(subcategory: Subcategory) -> AnyPublisher<[MovieViewModel], Never> {
-        movieUseCase
-            .fetchPopularMovies(subcategory: subcategory)
-            .replaceError(with: [])
-            .map { $0.map { MovieViewModel(with: $0) } }
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    func movies(section: HomeSection, subcategory: Subcategory) -> AnyPublisher<[MovieViewModel], Never> {
+        switch section {
+        case .whatsPopular:
+            return movieUseCase
+                .fetchPopularMovies(subcategory: subcategory)
+                .replaceError(with: [])
+                .map { $0.map { MovieViewModel(with: $0) } }
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
+
+        case .topRated:
+            return movieUseCase
+                .fetchTopRatedMovies(subcategory: subcategory)
+                .replaceError(with: [])
+                .map { $0.map { MovieViewModel(with: $0) } }
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
+
+        case .trending:
+            return movieUseCase
+                .fetchTrendingMovies(subcategory: subcategory)
+                .replaceError(with: [])
+                .map { $0.map { MovieViewModel(with: $0) } }
+                .receive(on: DispatchQueue.main)
+                .eraseToAnyPublisher()
+        }
     }
 
 }

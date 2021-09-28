@@ -18,6 +18,8 @@ extension SubcategoryScrollView: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        clipsToBounds = false
+
         stackView.distribution = .equalSpacing
         stackView.spacing = 15
         stackView.alignment = .leading

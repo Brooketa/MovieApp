@@ -22,6 +22,42 @@ class MovieUseCase: MovieUseCaseProtocol {
             .eraseToAnyPublisher()
     }
 
+    func fetchTopRatedMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
+        movieRepository
+            .fetchTopRatedMovies()
+            .map { $0.compactMap {
+                switch subcategory {
+                case .week, .today:
+                    return MovieUseCaseModel(from: $0)
+                default:
+                    if $0.movieGenres.contains(subcategory.rawValue) {
+                        return MovieUseCaseModel(from: $0)
+                    } else {
+                        return nil
+                    }
+                }
+            } }
+            .eraseToAnyPublisher()
+    }
+
+    func fetchTrendingMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
+        movieRepository
+            .fetchTrendingMovies()
+            .map { $0.compactMap {
+                switch subcategory {
+                case .week, .today:
+                    return MovieUseCaseModel(from: $0)
+                default:
+                    if $0.movieGenres.contains(subcategory.rawValue) {
+                        return MovieUseCaseModel(from: $0)
+                    } else {
+                        return nil
+                    }
+                }
+            } }
+            .eraseToAnyPublisher()
+    }
+
     init(movieRepository: MovieRepositoryProtocol) {
         self.movieRepository = movieRepository
     }

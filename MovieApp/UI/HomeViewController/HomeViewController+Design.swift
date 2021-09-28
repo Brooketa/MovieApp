@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 extension HomeViewController: ConstructViewsProtocol {
 
@@ -9,9 +10,6 @@ extension HomeViewController: ConstructViewsProtocol {
     }
 
     func createViews() {
-        sectionHeader = HomeSectionHeader()
-        view.addSubview(sectionHeader)
-
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
 
         collectionView.register(
@@ -31,37 +29,43 @@ extension HomeViewController: ConstructViewsProtocol {
         setDefaultNavBar()
         view.backgroundColor = .white
 
-        collectionView.contentInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        collectionView.alwaysBounceHorizontal = true
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .white
-
-        sectionHeader.setTitle(sectionTitle: "What's popular")
-        sectionHeader.setSubcategories(
-            subcategories: [.action, .adventure, .comedy, .documentary, .drama, .horror, .scienceFiction, .thriller])
     }
 
     func defineLayoutForViews() {
-        sectionHeader.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(15)
-            make.leading.equalToSuperview().offset(15)
-            make.trailing.equalToSuperview().offset(-15)
-            make.height.equalTo(100)
-        }
-
         collectionView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(sectionHeader.snp.bottom)
-            make.height.equalTo(400)
+            make.edges.equalToSuperview()
         }
     }
 
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.width * 0.3, height: 170)
-        layout.scrollDirection = .horizontal
+        let headerFooterSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(90))
 
-       return layout
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerFooterSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: .fractionalHeight(1)))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 15)
+
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(
+                widthDimension: .fractionalWidth(0.40),
+                heightDimension: .fractionalWidth(0.55)),
+            subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15)
+        section.boundarySupplementaryItems = [sectionHeader]
+
+        return UICollectionViewCompositionalLayout(section: section)
     }
-
 }

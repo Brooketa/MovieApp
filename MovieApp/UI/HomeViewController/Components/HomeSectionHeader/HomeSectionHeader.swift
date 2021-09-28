@@ -15,6 +15,8 @@ class HomeSectionHeader: UICollectionReusableView {
             .buttonTap
     }
 
+    var cancellables = Set<AnyCancellable>()
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
 
@@ -23,6 +25,10 @@ class HomeSectionHeader: UICollectionReusableView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func prepareForReuse() {
+        cancellables = Set<AnyCancellable>()
     }
 
     override func didMoveToSuperview() {
@@ -36,4 +42,9 @@ class HomeSectionHeader: UICollectionReusableView {
     func setSubcategories(subcategories: [Subcategory]) {
         subcategoryScrollView.setSubcategories(subcategories: subcategories)
     }
+
+    func setSelected(subcategory: Subcategory) {
+        subcategoryScrollView.setSelected(subcategory: subcategory)
+    }
+
 }

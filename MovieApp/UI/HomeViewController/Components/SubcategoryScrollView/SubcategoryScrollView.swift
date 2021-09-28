@@ -25,9 +25,15 @@ class SubcategoryScrollView: UIScrollView {
     }
 
     func setSubcategories(subcategories: [Subcategory]) {
+        for subview in stackView.arrangedSubviews {
+            stackView.removeArrangedSubview(subview)
+            subview.removeFromSuperview()
+        }
+
         let buttonTaps = subcategories
             .map { subcategory -> AnyPublisher<Subcategory, Never> in
                 let button = UnderlinedButton(title: subcategory.description)
+                button.tag = subcategory.rawValue
                 button.setDeselected()
                 stackView.addArrangedSubview(button)
 
@@ -42,6 +48,19 @@ class SubcategoryScrollView: UIScrollView {
         firstButton?.setSelected()
     }
 
+    func setSelected(subcategory: Subcategory) {
+        stackView.subviews.forEach { subview in
+            guard
+                let stackButton = subview as? UnderlinedButton,
+                let buttonSubcategory = Subcategory(rawValue: stackButton.tag)
+            else {
+                return
+            }
+
+            subcategory == buttonSubcategory ? stackButton.setSelected() : stackButton.setDeselected()
+        }
+    }
+
     private func configureButtonSubscription(
         button: UnderlinedButton,
         subcategory: Subcategory
@@ -52,12 +71,7 @@ class SubcategoryScrollView: UIScrollView {
             .handleEvents(receiveOutput: { [weak self] _ in
                 guard let self = self else { return }
 
-                self.stackView.subviews.forEach { subview in
-                    if let stackButton = subview as? UnderlinedButton {
-                        stackButton.setDeselected()
-                    }
-                }
-                button.setSelected()
+                self.setSelected(subcategory: subcategory)
             })
             .eraseToAnyPublisher()
     }
