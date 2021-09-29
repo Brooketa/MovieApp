@@ -4,6 +4,7 @@ public extension UIColor {
 
     static let darkBlue = UIColor(rgb: 0x0B253F)
     static let underlinedButtonGray = UIColor(rgb: 0x828282)
+    static let lightGreen = UIColor(rgb: 0x1EC96E)
 
     private convenience init(red: Int, green: Int, blue: Int) {
         assert(red >= 0 && red <= 255, "Invalid red component")

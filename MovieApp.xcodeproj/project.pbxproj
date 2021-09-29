@@ -38,6 +38,8 @@
 		709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */; };
 		709D6A7726F22B8300433A2F /* UnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7626F22B8300433A2F /* UnderlinedButton.swift */; };
 		709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */; };
+		70A31B122702504700E275FB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B112702504700E275FB /* ProgressView.swift */; };
+		70A31B152702506600E275FB /* ProgressView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B142702506600E275FB /* ProgressView+Design.swift */; };
 		70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */; };
 		70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */; };
 		70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BE26FB2D690023EBF1 /* GestureType.swift */; };
@@ -110,6 +112,8 @@
 		709D6A7026F1F2F400433A2F /* SubcategoryScrollView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SubcategoryScrollView+Design.swift"; sourceTree = "<group>"; };
 		709D6A7626F22B8300433A2F /* UnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlinedButton.swift; sourceTree = "<group>"; };
 		709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnderlinedButton+Design.swift"; sourceTree = "<group>"; };
+		70A31B112702504700E275FB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		70A31B142702506600E275FB /* ProgressView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressView+Design.swift"; sourceTree = "<group>"; };
 		70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
 		70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
 		70AB75BE26FB2D690023EBF1 /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
@@ -290,6 +294,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		70A31B102702501500E275FB /* CoreUI */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B132702504C00E275FB /* ProgressView */,
+			);
+			path = CoreUI;
+			sourceTree = "<group>";
+		};
+		70A31B132702504C00E275FB /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B112702504700E275FB /* ProgressView.swift */,
+				70A31B142702506600E275FB /* ProgressView+Design.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		70AB75C226FB2D6D0023EBF1 /* GesturePublisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +421,7 @@
 		70E57C9A26E73C8600A5E9D2 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				70A31B102702501500E275FB /* CoreUI */,
 				7020B89826F8790400B326E2 /* Shared */,
 				70532C4926EF88B10010AF2F /* AppRouter */,
 				70807FF126EA33F300FCC5AA /* Networking */,
@@ -617,6 +639,7 @@
 				70DA250726F363710045B7EA /* HomeCollectionView+Design.swift in Sources */,
 				7054634726EB8FC600A235AB /* MovieUseCaseProtocol.swift in Sources */,
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
+				70A31B152702506600E275FB /* ProgressView+Design.swift in Sources */,
 				70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */,
 				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
 				70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */,
@@ -629,6 +652,7 @@
 				7054634026EB8C5E00A235AB /* MovieRepositoryProtocol.swift in Sources */,
 				7020B8A526F89E0100B326E2 /* HomePresenter.swift in Sources */,
 				70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */,
+				70A31B122702504700E275FB /* ProgressView.swift in Sources */,
 				7054633726EB537C00A235AB /* MovieDataSource.swift in Sources */,
 				7054633926EB538700A235AB /* MovieDataSourceProtocol.swift in Sources */,
 				7054633126EB3E8D00A235AB /* MovieClientModel.swift in Sources */,
