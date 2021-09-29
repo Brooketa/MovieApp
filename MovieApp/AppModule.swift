@@ -72,11 +72,15 @@ private extension AppModule {
 
     private func registerViewControllers(in container: Resolver) {
         container
-            .register { SearchViewController(presenter: container.resolve()) }
+            .register { DetailsViewController() }
             .scope(.unique)
 
         container
             .register { HomeViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { SearchViewController(presenter: container.resolve()) }
             .scope(.unique)
     }
 

@@ -40,6 +40,10 @@
 		709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */; };
 		70A31B122702504700E275FB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B112702504700E275FB /* ProgressView.swift */; };
 		70A31B152702506600E275FB /* ProgressView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B142702506600E275FB /* ProgressView+Design.swift */; };
+		70A31B18270321B700E275FB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B17270321B700E275FB /* DetailsViewController.swift */; };
+		70A31B1A270321C300E275FB /* DetailsViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B19270321C300E275FB /* DetailsViewController+Design.swift */; };
+		70A31B1D2703228900E275FB /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B1C2703228900E275FB /* DetailsHeaderView.swift */; };
+		70A31B1F2703229600E275FB /* DetailsHeaderView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B1E2703229600E275FB /* DetailsHeaderView+Design.swift */; };
 		70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */; };
 		70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */; };
 		70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BE26FB2D690023EBF1 /* GestureType.swift */; };
@@ -114,6 +118,10 @@
 		709D6A7826F22BDF00433A2F /* UnderlinedButton+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnderlinedButton+Design.swift"; sourceTree = "<group>"; };
 		70A31B112702504700E275FB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		70A31B142702506600E275FB /* ProgressView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressView+Design.swift"; sourceTree = "<group>"; };
+		70A31B17270321B700E275FB /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		70A31B19270321C300E275FB /* DetailsViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Design.swift"; sourceTree = "<group>"; };
+		70A31B1C2703228900E275FB /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
+		70A31B1E2703229600E275FB /* DetailsHeaderView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsHeaderView+Design.swift"; sourceTree = "<group>"; };
 		70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
 		70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
 		70AB75BE26FB2D690023EBF1 /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
@@ -311,6 +319,33 @@
 			path = ProgressView;
 			sourceTree = "<group>";
 		};
+		70A31B162703218B00E275FB /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B1B2703221300E275FB /* Components */,
+				70A31B17270321B700E275FB /* DetailsViewController.swift */,
+				70A31B19270321C300E275FB /* DetailsViewController+Design.swift */,
+			);
+			path = DetailsViewController;
+			sourceTree = "<group>";
+		};
+		70A31B1B2703221300E275FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B202703273200E275FB /* DetailsHeaderView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		70A31B202703273200E275FB /* DetailsHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B1C2703228900E275FB /* DetailsHeaderView.swift */,
+				70A31B1E2703229600E275FB /* DetailsHeaderView+Design.swift */,
+			);
+			path = DetailsHeaderView;
+			sourceTree = "<group>";
+		};
 		70AB75C226FB2D6D0023EBF1 /* GesturePublisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +368,7 @@
 		70B404B426E79E0D0012F23E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				70A31B162703218B00E275FB /* DetailsViewController */,
 				709D6A6826F1F0AE00433A2F /* HomeViewController */,
 				70B404B526E79E180012F23E /* SearchViewController */,
 				70807FE426E8BD5100FCC5AA /* Extensions */,
@@ -425,6 +461,7 @@
 				7020B89826F8790400B326E2 /* Shared */,
 				70532C4926EF88B10010AF2F /* AppRouter */,
 				70807FF126EA33F300FCC5AA /* Networking */,
+				70A31B102702501500E275FB /* CoreUI */,
 				70B404B426E79E0D0012F23E /* UI */,
 				70807FE926E8CD9F00FCC5AA /* View Models */,
 				70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */,
@@ -641,6 +678,7 @@
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
 				70A31B152702506600E275FB /* ProgressView+Design.swift in Sources */,
 				70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */,
+				70A31B18270321B700E275FB /* DetailsViewController.swift in Sources */,
 				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
 				70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */,
 				70532C4426EF78E00010AF2F /* AppRouter.swift in Sources */,
@@ -649,6 +687,7 @@
 				7054634926EB8FD600A235AB /* MovieUseCaseModel.swift in Sources */,
 				70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */,
 				70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */,
+				70A31B1A270321C300E275FB /* DetailsViewController+Design.swift in Sources */,
 				7054634026EB8C5E00A235AB /* MovieRepositoryProtocol.swift in Sources */,
 				7020B8A526F89E0100B326E2 /* HomePresenter.swift in Sources */,
 				70B404B726E79E780012F23E /* SearchViewController+Design.swift in Sources */,
@@ -660,6 +699,7 @@
 				709D6A6A26F1F0C500433A2F /* HomeViewController.swift in Sources */,
 				70B404BC26E7A6470012F23E /* MovieCollectionViewCell.swift in Sources */,
 				709D6A7126F1F2F400433A2F /* SubcategoryScrollView+Design.swift in Sources */,
+				70A31B1D2703228900E275FB /* DetailsHeaderView.swift in Sources */,
 				709D6A6F26F1F21A00433A2F /* SubcategoryScrollView.swift in Sources */,
 				70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */,
 				7054634526EB8FB400A235AB /* MovieUseCase.swift in Sources */,
@@ -668,6 +708,7 @@
 				70532C4626EF802C0010AF2F /* AppRouterProtocol.swift in Sources */,
 				70532C4226EF507D0010AF2F /* AppModule.swift in Sources */,
 				70807FE626E8BD7A00FCC5AA /* UIViewController+Extensions.swift in Sources */,
+				70A31B1F2703229600E275FB /* DetailsHeaderView+Design.swift in Sources */,
 				7054633E26EB8C4600A235AB /* MovieRepository.swift in Sources */,
 				7054633B26EB53C900A235AB /* MovieDataSourceModel.swift in Sources */,
 				70DA250026F345B80045B7EA /* HomeSectionHeader.swift in Sources */,

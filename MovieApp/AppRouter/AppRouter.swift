@@ -20,7 +20,7 @@ class AppRouter: AppRouterProtocol {
     func showHome() {
         guard let navigationController = navigationController else { return }
 
-        let homeViewController: HomeViewController = container.resolve()
+        let homeViewController: DetailsViewController = container.resolve()
         navigationController.setViewControllers([homeViewController], animated: true)
     }
 
