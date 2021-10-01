@@ -32,6 +32,10 @@
 		70807FF426EA343800FCC5AA /* MovieClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF326EA343800FCC5AA /* MovieClientProtocol.swift */; };
 		70807FF626EA34DE00FCC5AA /* MovieClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF526EA34DE00FCC5AA /* MovieClient.swift */; };
 		70807FF826EA3DC200FCC5AA /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70807FF726EA3DC200FCC5AA /* APIConstants.swift */; };
+		709AA57827049C93004429BD /* DetailsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AA57727049C93004429BD /* DetailsOverviewView.swift */; };
+		709AA57A27049CB1004429BD /* DetailsOverviewView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AA57927049CB1004429BD /* DetailsOverviewView+Design.swift */; };
+		709AA57D27049E16004429BD /* SignificantCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AA57C27049E16004429BD /* SignificantCrewView.swift */; };
+		709AA57F27049E52004429BD /* SignificantCrewView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709AA57E27049E52004429BD /* SignificantCrewView+Design.swift */; };
 		709D6A6A26F1F0C500433A2F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6926F1F0C500433A2F /* HomeViewController.swift */; };
 		709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */; };
 		709D6A6F26F1F21A00433A2F /* SubcategoryScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709D6A6E26F1F21A00433A2F /* SubcategoryScrollView.swift */; };
@@ -110,6 +114,10 @@
 		70807FF326EA343800FCC5AA /* MovieClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClientProtocol.swift; sourceTree = "<group>"; };
 		70807FF526EA34DE00FCC5AA /* MovieClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieClient.swift; sourceTree = "<group>"; };
 		70807FF726EA3DC200FCC5AA /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		709AA57727049C93004429BD /* DetailsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsOverviewView.swift; sourceTree = "<group>"; };
+		709AA57927049CB1004429BD /* DetailsOverviewView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsOverviewView+Design.swift"; sourceTree = "<group>"; };
+		709AA57C27049E16004429BD /* SignificantCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignificantCrewView.swift; sourceTree = "<group>"; };
+		709AA57E27049E52004429BD /* SignificantCrewView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignificantCrewView+Design.swift"; sourceTree = "<group>"; };
 		709D6A6926F1F0C500433A2F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		709D6A6B26F1F12100433A2F /* HomeViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Design.swift"; sourceTree = "<group>"; };
 		709D6A6E26F1F21A00433A2F /* SubcategoryScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubcategoryScrollView.swift; sourceTree = "<group>"; };
@@ -277,6 +285,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		709AA57627049BB3004429BD /* DetailsOverviewView */ = {
+			isa = PBXGroup;
+			children = (
+				709AA57727049C93004429BD /* DetailsOverviewView.swift */,
+				709AA57927049CB1004429BD /* DetailsOverviewView+Design.swift */,
+			);
+			path = DetailsOverviewView;
+			sourceTree = "<group>";
+		};
+		709AA57B27049D97004429BD /* SignificantCrewView */ = {
+			isa = PBXGroup;
+			children = (
+				709AA57C27049E16004429BD /* SignificantCrewView.swift */,
+				709AA57E27049E52004429BD /* SignificantCrewView+Design.swift */,
+			);
+			path = SignificantCrewView;
+			sourceTree = "<group>";
+		};
 		709D6A6826F1F0AE00433A2F /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +359,8 @@
 			isa = PBXGroup;
 			children = (
 				70A31B202703273200E275FB /* DetailsHeaderView */,
+				709AA57627049BB3004429BD /* DetailsOverviewView */,
+				709AA57B27049D97004429BD /* SignificantCrewView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -457,7 +485,6 @@
 		70E57C9A26E73C8600A5E9D2 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				70A31B102702501500E275FB /* CoreUI */,
 				7020B89826F8790400B326E2 /* Shared */,
 				70532C4926EF88B10010AF2F /* AppRouter */,
 				70807FF126EA33F300FCC5AA /* Networking */,
@@ -666,11 +693,13 @@
 				70807FE826E8CD4800FCC5AA /* SearchPresenter.swift in Sources */,
 				70807FF826EA3DC200FCC5AA /* APIConstants.swift in Sources */,
 				70807FED26E9D2CB00FCC5AA /* UIColor+Extensions.swift in Sources */,
+				709AA57D27049E16004429BD /* SignificantCrewView.swift in Sources */,
 				70B404BE26E7A6C30012F23E /* MovieCollectionViewCell+Design.swift in Sources */,
 				70B3102526F492EB003EB574 /* FavoriteButton+Design.swift in Sources */,
 				709D6A7926F22BDF00433A2F /* UnderlinedButton+Design.swift in Sources */,
 				70E339BD26EA431F000DC331 /* MovieNetworkModel.swift in Sources */,
 				70807FEB26E8CDB100FCC5AA /* MovieViewModel.swift in Sources */,
+				709AA57F27049E52004429BD /* SignificantCrewView+Design.swift in Sources */,
 				7020B8A126F886AF00B326E2 /* UIView+Extensions.swift in Sources */,
 				70B404B926E79EDA0012F23E /* ConstructViewsProtocol.swift in Sources */,
 				70DA250726F363710045B7EA /* HomeCollectionView+Design.swift in Sources */,
@@ -678,6 +707,7 @@
 				70E57CA026E73C8600A5E9D2 /* SearchViewController.swift in Sources */,
 				70A31B152702506600E275FB /* ProgressView+Design.swift in Sources */,
 				70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */,
+				709AA57A27049CB1004429BD /* DetailsOverviewView+Design.swift in Sources */,
 				70A31B18270321B700E275FB /* DetailsViewController.swift in Sources */,
 				709D6A6C26F1F12100433A2F /* HomeViewController+Design.swift in Sources */,
 				70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */,
@@ -685,6 +715,7 @@
 				70E57C9C26E73C8600A5E9D2 /* AppDelegate.swift in Sources */,
 				70807FF626EA34DE00FCC5AA /* MovieClient.swift in Sources */,
 				7054634926EB8FD600A235AB /* MovieUseCaseModel.swift in Sources */,
+				709AA57827049C93004429BD /* DetailsOverviewView.swift in Sources */,
 				70DA24FB26F23A970045B7EA /* Subcategory.swift in Sources */,
 				70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */,
 				70A31B1A270321C300E275FB /* DetailsViewController+Design.swift in Sources */,

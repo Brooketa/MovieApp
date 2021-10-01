@@ -7,4 +7,5 @@ class DetailsViewController: UIViewController {
 
         buildViews()
     }
+
 }
