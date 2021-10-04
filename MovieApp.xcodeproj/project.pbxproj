@@ -214,8 +214,7 @@
 				7072133527073973002CD49A /* DataSources */,
 				70721337270739E8002CD49A /* Repositories */,
 				7072133927073A12002CD49A /* UseCases */,
-				70A31B162703218B00E275FB /* Details */,
-				709D6A6826F1F0AE00433A2F /* Home */,
+				70DFA07A270B443B00CC0C02 /* UI */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -451,15 +450,6 @@
 			path = FavoriteButton;
 			sourceTree = "<group>";
 		};
-		70B404B426E79E0D0012F23E /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				7027C7E027075A290011E675 /* Movies */,
-				70B404B526E79E180012F23E /* Search */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		70B404B526E79E180012F23E /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +506,15 @@
 			path = HomeColletionViewCell;
 			sourceTree = "<group>";
 		};
+		70DFA07A270B443B00CC0C02 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				70A31B162703218B00E275FB /* Details */,
+				709D6A6826F1F0AE00433A2F /* Home */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		70E57C8F26E73C8600A5E9D2 = {
 			isa = PBXGroup;
 			children = (
@@ -545,7 +544,8 @@
 				70807FF126EA33F300FCC5AA /* Utils */,
 				7072132A270738E7002CD49A /* Extensions */,
 				70A31B102702501500E275FB /* CoreUI */,
-				70B404B426E79E0D0012F23E /* UI */,
+				7027C7E027075A290011E675 /* Movies */,
+				70B404B526E79E180012F23E /* Search */,
 				70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */,
 				70532C4126EF507D0010AF2F /* AppModule.swift */,
 				70E57CA426E73C8700A5E9D2 /* Assets.xcassets */,
