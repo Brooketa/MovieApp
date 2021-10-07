@@ -27,15 +27,14 @@ class DetailsOverviewView: UIView {
         defineLayoutForViews()
     }
 
-    func set(viewModel: MovieViewModel?) {
-        descriptionLabel.attributedText = lineSpacedDescription(description: "")
-        stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: nil))
-        stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: nil))
+    func set(viewModel: DetailsOverviewViewModel) {
+        descriptionLabel.attributedText = lineSpacedDescription(description: viewModel.overview)
+        stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: viewModel.firstRowCast))
+        stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: viewModel.secondRowCast))
     }
 
-    private func createHorizontalCrewRow(crewMembers: [MovieViewModel]?) -> UIStackView {
+    private func createHorizontalCrewRow(crewMembers: [OverviewCastViewModel]) -> UIStackView {
         let horizontalCrewRow = makeHorizontalCrewStackView()
-        guard let crewMembers = crewMembers else { return UIStackView() }
 
         for crewMember in crewMembers {
             horizontalCrewRow.addArrangedSubview(createSignificantCrewViews(crewMember: crewMember))
@@ -48,15 +47,15 @@ class DetailsOverviewView: UIView {
         let horizontalStackView = UIStackView()
         horizontalStackView.axis = .horizontal
         horizontalStackView.spacing = 15
-        horizontalStackView.distribution = .equalCentering
+        horizontalStackView.distribution = .fillEqually
         horizontalStackView.alignment = .fill
 
         return horizontalStackView
     }
 
-    private func createSignificantCrewViews(crewMember: MovieViewModel?) -> SignificantCrewView {
+    private func createSignificantCrewViews(crewMember: OverviewCastViewModel) -> SignificantCrewView {
         let crewMemberView = SignificantCrewView()
-        crewMemberView.setCrewMember(name: "", role: "")
+        crewMemberView.setCrewMember(name: crewMember.castName, role: crewMember.castRole)
 
         return crewMemberView
     }

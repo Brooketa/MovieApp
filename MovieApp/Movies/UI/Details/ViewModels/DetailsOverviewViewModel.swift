@@ -1,6 +1,7 @@
 struct DetailsOverviewViewModel {
 
     let overview: String
-    let overviewCast: [OverviewCastViewModel]
+    let firstRowCast: [OverviewCastViewModel]
+    let secondRowCast: [OverviewCastViewModel]
 
 }

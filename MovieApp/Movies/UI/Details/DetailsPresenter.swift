@@ -64,9 +64,14 @@ class DetailsPresenter: NSObject {
         castModels: [DetailsCastUseCaseModel]
     ) -> DetailsOverviewViewModel {
         let overview = movieModel.movieDescription
-        let overviewCast = castModels.prefix(6).map { OverviewCastViewModel(from: $0) }
+        let firstSixCasts = castModels.prefix(6).map { OverviewCastViewModel(from: $0) }
+        let firstRowCast = Array(firstSixCasts.prefix(3))
+        let secondRowCast = Array(firstSixCasts.suffix(3))
 
-        return DetailsOverviewViewModel(overview: overview, overviewCast: overviewCast)
+        return DetailsOverviewViewModel(
+            overview: overview,
+            firstRowCast: firstRowCast,
+            secondRowCast: secondRowCast)
     }
 
 }
