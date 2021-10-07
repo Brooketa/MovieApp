@@ -37,12 +37,22 @@ private extension AppModule {
             .register { MovieClient() }
             .implements(MovieClientProtocol.self)
             .scope(.application)
+
+        container
+            .register { DetailsClient() }
+            .implements(DetailsClientProtocol.self)
+            .scope(.application)
     }
 
     private func registerDataSources(in container: Resolver) {
         container
             .register { MovieDataSource(movieClient: container.resolve()) }
             .implements(MovieDataSourceProtocol.self)
+            .scope(.application)
+
+        container
+            .register { DetailsDataSource(detailsClient: container.resolve()) }
+            .implements(DetailsDataSourceProtocol.self)
             .scope(.application)
     }
 
@@ -51,12 +61,22 @@ private extension AppModule {
             .register { MovieRepository(movieDataSource: container.resolve()) }
             .implements(MovieRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register { DetailsRepository(detailsDataSource: container.resolve()) }
+            .implements(DetailsRepositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases(in container: Resolver) {
         container
             .register { MovieUseCase(movieRepository: container.resolve()) }
             .implements(MovieUseCaseProtocol.self)
+            .scope(.application)
+
+        container
+            .register { DetailsUseCase(detailsRepository: container.resolve()) }
+            .implements(DetailsUseCaseProtocol.self)
             .scope(.application)
     }
 
@@ -68,11 +88,15 @@ private extension AppModule {
         container
             .register { HomePresenter(movieUseCase: container.resolve()) }
             .scope(.unique)
+
+        container
+            .register { DetailsPresenter(detailsUseCase: container.resolve()) }
+            .scope(.unique)
     }
 
     private func registerViewControllers(in container: Resolver) {
         container
-            .register { DetailsViewController() }
+            .register { DetailsViewController(presenter: container.resolve()) }
             .scope(.unique)
 
         container

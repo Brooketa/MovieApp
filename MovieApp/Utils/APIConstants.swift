@@ -18,6 +18,30 @@ https://api.themoviedb.org\
 api_key=996a548079728d26102931bab18885f2
 """
 
+    static let movieURL = """
+https://api.themoviedb.org\
+/3/movie/%d?\
+api_key=996a548079728d26102931bab18885f2
+"""
+
+    static let castURL = """
+https://api.themoviedb.org\
+/3/movie/%d/credits?\
+api_key=996a548079728d26102931bab18885f2
+"""
+
+    static let reviewURL = """
+https://api.themoviedb.org\
+/3/movie/%d/reviews?\
+api_key=996a548079728d26102931bab18885f2
+"""
+
+    static let recommendedURL = """
+https://api.themoviedb.org\
+/3/movie/%d/recommendations?\
+api_key=996a548079728d26102931bab18885f2
+"""
+
     static let posterImageRootURL = "https://image.tmdb.org/t/p/w500"
 
 }
