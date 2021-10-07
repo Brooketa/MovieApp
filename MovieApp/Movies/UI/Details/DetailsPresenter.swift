@@ -35,13 +35,18 @@ class DetailsPresenter: NSObject {
         let duration = model.duration
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "yyyy-MM-dd"
 
-        var releaseDate = Date()
+        var releaseDate = ""
+        var releaseYear = 0
 
         if let date = dateFormatter.date(from: model.releaseDate) {
-            releaseDate = date
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            releaseDate = dateFormatter.string(from: date)
+
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year], from: date)
+            releaseYear = components.year ?? 0
         }
 
         return DetailsHeaderViewModel(
@@ -50,7 +55,8 @@ class DetailsPresenter: NSObject {
             movieGenres: movieGenres,
             rating: rating,
             duration: duration,
-            releaseDate: releaseDate)
+            releaseDate: releaseDate,
+            releaseYear: releaseYear)
     }
 
     private func getOverviewViewModel(

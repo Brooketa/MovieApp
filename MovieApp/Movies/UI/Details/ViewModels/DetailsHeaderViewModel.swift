@@ -7,6 +7,7 @@ struct DetailsHeaderViewModel {
     let movieGenres: [MovieGenreViewModel]
     let rating: Double
     let duration: Int
-    let releaseDate: Date
+    let releaseDate: String
+    let releaseYear: Int
 
 }

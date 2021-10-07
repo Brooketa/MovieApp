@@ -36,6 +36,7 @@ extension DetailsHeaderView: ConstructViewsProtocol {
 
     func styleViews() {
         posterImageView.clipsToBounds = true
+        posterImageView.contentMode = .scaleAspectFill
 
         gradientView.layer.addSublayer(makeBackgroundGradient())
 

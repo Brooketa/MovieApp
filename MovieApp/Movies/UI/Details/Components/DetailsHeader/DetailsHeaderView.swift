@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class DetailsHeaderView: UIView {
 
@@ -37,13 +38,14 @@ class DetailsHeaderView: UIView {
         defineLayoutForViews()
     }
 
-    func set(viewModel: MovieViewModel?) {
-        progressView.setProgress(progress: 0)
-        titleLabel.attributedText = titleAttributedText(title: "", year: 0)
-        dateReleasedLabel.text = ""
+    func set(viewModel: DetailsHeaderViewModel) {
+        posterImageView.kf.setImage(with: viewModel.movieBackdropImageURL)
+        progressView.setProgress(progress: viewModel.rating / 10)
+        titleLabel.attributedText = titleAttributedText(title: viewModel.movieTitle, year: viewModel.releaseYear)
+        dateReleasedLabel.text = viewModel.releaseDate.description
         genresLabel.attributedText = genreAttributedText(
-            genres: [""],
-            duration: 0)
+            genres: viewModel.movieGenres,
+            duration: viewModel.duration)
     }
 
     private func titleAttributedText(title: String, year: Int) -> NSMutableAttributedString {
@@ -54,8 +56,8 @@ class DetailsHeaderView: UIView {
         return titleString
     }
 
-    private func genreAttributedText(genres: [String], duration: Int) -> NSMutableAttributedString {
-        let genresAttString = NSMutableAttributedString(string: genres.joined(separator: ", "))
+    private func genreAttributedText(genres: [MovieGenreViewModel], duration: Int) -> NSMutableAttributedString {
+        let genresAttString = NSMutableAttributedString(string: genres.map { $0.genre }.joined(separator: ", "))
         let durationAttString = NSAttributedString(
             string: " \(minutesToHoursMinutes(minutes: duration))",
             attributes: durationAttributes)
