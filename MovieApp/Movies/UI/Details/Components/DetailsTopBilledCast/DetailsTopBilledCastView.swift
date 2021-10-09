@@ -2,8 +2,8 @@ import UIKit
 
 class DetailsTopBilledCastView: UIView {
 
-    private typealias CastDataSource = UICollectionViewDiffableDataSource<CastSection, MovieViewModel>
-    private typealias CastSnapshot = NSDiffableDataSourceSnapshot<CastSection, MovieViewModel>
+    private typealias CastDataSource = UICollectionViewDiffableDataSource<CastSection, TopBilledCastViewModel>
+    private typealias CastSnapshot = NSDiffableDataSourceSnapshot<CastSection, TopBilledCastViewModel>
 
     var topBilledCastLabel: UILabel!
     var fullCastButton: UIButton!
@@ -18,13 +18,13 @@ class DetailsTopBilledCastView: UIView {
 
         buildViews()
         castDataSource = makeCastDataSource()
-
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         buildViews()
+        castDataSource = makeCastDataSource()
     }
 
     required init?(coder: NSCoder) {
@@ -35,8 +35,8 @@ class DetailsTopBilledCastView: UIView {
         defineLayoutForViews()
     }
 
-    public func setCast(viewModels: [MovieViewModel]) {
-        updateCastDataSource(with: viewModels)
+    public func setCast(viewModel: DetailsTopCastViewModel) {
+        updateCastDataSource(with: viewModel.topCast)
     }
 
     private func makeCastDataSource() -> CastDataSource {
@@ -57,13 +57,13 @@ class DetailsTopBilledCastView: UIView {
             })
 
         castSnapshot = CastSnapshot()
-        castSnapshot.appendSections([.main])
+        castSnapshot.appendSections([CastSection.main])
 
         return castDataSource
     }
 
-    private func updateCastDataSource(with viewModels: [MovieViewModel]) {
-        castSnapshot.appendItems(viewModels, toSection: .main)
+    private func updateCastDataSource(with viewModels: [TopBilledCastViewModel]) {
+        castSnapshot.appendItems(viewModels, toSection: CastSection.main)
         castDataSource.apply(castSnapshot, animatingDifferences: true, completion: nil)
     }
 

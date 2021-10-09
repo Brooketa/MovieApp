@@ -2,6 +2,7 @@ import UIKit
 import SnapKit
 
 extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
+
     func buildViews() {
         createViews()
         styleViews()
@@ -49,4 +50,5 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
             make.leading.trailing.bottom.equalToSuperview().inset(10)
         }
     }
+
 }

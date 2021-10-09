@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class DetailsCastCollectionViewCell: UICollectionViewCell {
 
@@ -28,10 +29,10 @@ class DetailsCastCollectionViewCell: UICollectionViewCell {
         defineLayoutForViews()
     }
 
-    public func set(viewModel: MovieViewModel?) {
-        castImageView.image = UIImage(named: "")
-        castNameLabel.text = ""
-        castRoleLabel.text = ""
+    public func set(viewModel: TopBilledCastViewModel) {
+        castImageView.kf.setImage(with: viewModel.castProfileImageURL)
+        castNameLabel.text = viewModel.castName
+        castRoleLabel.text = viewModel.castRole
     }
 
 }

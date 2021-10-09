@@ -16,6 +16,9 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
         addSubview(fullCastButton)
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
+        collectionView.register(
+            DetailsCastCollectionViewCell.self,
+            forCellWithReuseIdentifier: DetailsCastCollectionViewCell.identifier)
         addSubview(collectionView)
     }
 
@@ -28,6 +31,8 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
         fullCastButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         fullCastButton.setTitleColor(.darkBlue, for: .normal)
         fullCastButton.setTitleColor(.lightGray, for: .highlighted)
+
+        collectionView.clipsToBounds = false
     }
 
     func defineLayoutForViews() {
@@ -42,8 +47,9 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
         }
 
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(topBilledCastLabel.snp.bottom).offset(20)
-            make.leading.trailing.bottom.equalToSuperview().inset(20)
+            make.top.equalTo(topBilledCastLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().offset(20)
         }
     }
 
@@ -56,13 +62,13 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
 
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(
-                widthDimension: .fractionalWidth(0.40),
-                heightDimension: .fractionalWidth(0.55)),
+                widthDimension: .fractionalWidth(0.36),
+                heightDimension: .fractionalWidth(0.58)),
             subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 20, bottom: 0, trailing: 20)
 
         return UICollectionViewCompositionalLayout(section: section)
     }
