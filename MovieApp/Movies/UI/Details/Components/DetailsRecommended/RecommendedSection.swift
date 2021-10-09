@@ -1,0 +1,5 @@
+enum RecommendedSection {
+
+    case main
+
+}
