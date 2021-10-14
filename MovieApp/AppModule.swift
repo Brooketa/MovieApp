@@ -42,6 +42,11 @@ private extension AppModule {
             .register { DetailsClient() }
             .implements(DetailsClientProtocol.self)
             .scope(.application)
+
+        container
+            .register { SearchClient() }
+            .implements(SearchClientProtocol.self)
+            .scope(.application)
     }
 
     private func registerDataSources(in container: Resolver) {
@@ -53,6 +58,11 @@ private extension AppModule {
         container
             .register { DetailsDataSource(detailsClient: container.resolve()) }
             .implements(DetailsDataSourceProtocol.self)
+            .scope(.application)
+
+        container
+            .register { SearchDataSource(searchClient: container.resolve()) }
+            .implements(SearchDataSourceProtocol.self)
             .scope(.application)
     }
 
@@ -66,6 +76,11 @@ private extension AppModule {
             .register { DetailsRepository(detailsDataSource: container.resolve()) }
             .implements(DetailsRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register { SearchRepository(searchDataSource: container.resolve()) }
+            .implements(SearchRepositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases(in container: Resolver) {
@@ -78,11 +93,16 @@ private extension AppModule {
             .register { DetailsUseCase(detailsRepository: container.resolve()) }
             .implements(DetailsUseCaseProtocol.self)
             .scope(.application)
+
+        container
+            .register { SearchUseCase(searchRepository: container.resolve()) }
+            .implements(SearchUseCaseProtocol.self)
+            .scope(.application)
     }
 
     private func registerPresenters(in container: Resolver) {
         container
-            .register { SearchPresenter(movieUseCase: container.resolve()) }
+            .register { SearchPresenter(searchUseCase: container.resolve()) }
             .scope(.unique)
 
         container

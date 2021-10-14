@@ -1,9 +1,9 @@
 import UIKit
 import Kingfisher
 
-class MovieCollectionViewCell: UICollectionViewCell {
+class SearchCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = String(describing: MovieCollectionViewCell.self)
+    static let identifier = String(describing: SearchCollectionViewCell.self)
 
     var movieImageView: UIImageView!
     var movieTitleLabel: UILabel!
@@ -27,8 +27,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
         defineLayoutForViews()
     }
 
-    public func set(viewModel: MovieViewModel) {
-        movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
+    public func set(viewModel: SearchMovieViewModel) {
+        movieImageView.kf.setImage(
+            with: viewModel.moviePosterImageURL,
+            placeholder: UIImage(named: "movie-placeholder"))
         movieTitleLabel.text = viewModel.movieTitle
         movieDescriptionLabel.text = viewModel.movieDescription
     }

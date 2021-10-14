@@ -1,7 +1,7 @@
 import Combine
 import UIKit
 
-class DetailsPresenter: NSObject {
+class DetailsPresenter {
 
     private let detailsUseCase: DetailsUseCaseProtocol
 
