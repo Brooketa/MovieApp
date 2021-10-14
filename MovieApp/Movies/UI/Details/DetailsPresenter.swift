@@ -5,6 +5,8 @@ class DetailsPresenter: NSObject {
 
     private let detailsUseCase: DetailsUseCaseProtocol
 
+    let dateFormatter = DateFormatter()
+
     init(detailsUseCase: DetailsUseCaseProtocol) {
         self.detailsUseCase = detailsUseCase
     }
@@ -21,7 +23,7 @@ class DetailsPresenter: NSObject {
                         movieModel: model.movieDetails,
                         castModels: model.castDetails),
                     topCastViewModel: DetailsTopCastViewModel(from: model.castDetails),
-                    reviewViewModel: DetailsReviewViewModel(from: model.reviewDetails),
+                    reviewViewModel: self.getReviewViewModel(from: model.reviewDetails),
                     recommendedViewModel: DetailsRecommendedViewModel(from: model.recommendedDetails))
             }
             .eraseToAnyPublisher()
@@ -34,7 +36,6 @@ class DetailsPresenter: NSObject {
         let rating = model.rating
         let duration = model.duration
 
-        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
         var releaseDate = ""
@@ -72,6 +73,28 @@ class DetailsPresenter: NSObject {
             overview: overview,
             firstRowCast: firstRowCast,
             secondRowCast: secondRowCast)
+    }
+
+    private func getReviewViewModel(from models: [DetailsReviewUseCaseModel]) -> DetailsReviewViewModel {
+        DetailsReviewViewModel(
+            reviews: models.map {
+                ReviewViewModel(
+                    author: ReviewAuthorViewModel(from: $0.author),
+                    reviewContent: $0.reviewContent,
+                    createdAt: getReviewDate(createdAt: $0.createdAt))
+            })
+    }
+
+    private func getReviewDate(createdAt: String) -> String {
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+
+        guard let date = dateFormatter.date(from: createdAt) else {
+            return ""
+        }
+
+        dateFormatter.dateStyle = .long
+
+        return dateFormatter.string(from: date)
     }
 
 }
