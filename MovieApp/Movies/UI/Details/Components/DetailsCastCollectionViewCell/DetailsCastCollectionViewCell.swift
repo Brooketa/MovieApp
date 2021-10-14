@@ -29,8 +29,8 @@ class DetailsCastCollectionViewCell: UICollectionViewCell {
         defineLayoutForViews()
     }
 
-    public func set(viewModel: TopBilledCastViewModel) {
-        castImageView.kf.setImage(with: viewModel.castProfileImageURL)
+    func set(viewModel: TopBilledCastViewModel) {
+        castImageView.kf.setImage(with: viewModel.castProfileImageURL, placeholder: UIImage(named: "cast-placeholder"))
         castNameLabel.text = viewModel.castName
         castRoleLabel.text = viewModel.castRole
     }

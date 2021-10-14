@@ -28,7 +28,7 @@ class DetailsRecommendedCollectionViewCell: UICollectionViewCell {
         defineLayoutForViews()
     }
 
-    public func set(viewModel: RecommendedMovieViewModel) {
+    func set(viewModel: RecommendedMovieViewModel) {
         backdropImageView.kf.setImage(with: viewModel.backdropImageURL)
         movieTitleLabel.text = viewModel.title
     }

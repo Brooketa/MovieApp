@@ -27,7 +27,7 @@ class DetailsOverviewView: UIView {
         defineLayoutForViews()
     }
 
-    func set(viewModel: DetailsOverviewViewModel) {
+    func setOverview(from viewModel: DetailsOverviewViewModel) {
         descriptionLabel.attributedText = lineSpacedDescription(description: viewModel.overview)
         stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: viewModel.firstRowCast))
         stackView.addArrangedSubview(createHorizontalCrewRow(crewMembers: viewModel.secondRowCast))

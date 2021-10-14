@@ -21,7 +21,7 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
 
     func styleViews() {
         addShadow()
-        configureRoundedCorners()
+        contentView.configureRoundedCorners()
 
         contentView.backgroundColor = .white
 

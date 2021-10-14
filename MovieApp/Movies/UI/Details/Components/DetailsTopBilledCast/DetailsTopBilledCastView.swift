@@ -35,7 +35,7 @@ class DetailsTopBilledCastView: UIView {
         defineLayoutForViews()
     }
 
-    public func setCast(viewModel: DetailsTopCastViewModel) {
+    func setCast(from viewModel: DetailsTopCastViewModel) {
         updateCastDataSource(with: viewModel.topCast)
     }
 

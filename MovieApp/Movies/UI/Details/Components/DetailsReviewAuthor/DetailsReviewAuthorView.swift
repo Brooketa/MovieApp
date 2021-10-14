@@ -31,7 +31,7 @@ class DetailsReviewAuthorView: UIView {
         defineLayoutForViews()
     }
 
-    public func set(from viewModel: ReviewAuthorViewModel, createdAt: String) {
+    func set(from viewModel: ReviewAuthorViewModel, createdAt: String) {
         authorAvatarImageView.kf.setImage(
             with: viewModel.authorAvatarURL,
             placeholder: UIImage(named: "author-placeholder"))

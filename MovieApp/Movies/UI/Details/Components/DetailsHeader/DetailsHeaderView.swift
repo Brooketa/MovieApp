@@ -38,7 +38,7 @@ class DetailsHeaderView: UIView {
         defineLayoutForViews()
     }
 
-    func set(viewModel: DetailsHeaderViewModel) {
+    func setHeader(from viewModel: DetailsHeaderViewModel) {
         posterImageView.kf.setImage(with: viewModel.movieBackdropImageURL)
         progressView.setProgress(progress: viewModel.rating / 10)
         titleLabel.attributedText = titleAttributedText(title: viewModel.movieTitle, year: viewModel.releaseYear)
@@ -46,6 +46,10 @@ class DetailsHeaderView: UIView {
         genresLabel.attributedText = genreAttributedText(
             genres: viewModel.movieGenres,
             duration: viewModel.duration)
+    }
+
+    public func configureGradient() {
+        gradientView.layer.addSublayer(makeBackgroundGradient())
     }
 
     private func titleAttributedText(title: String, year: Int) -> NSMutableAttributedString {

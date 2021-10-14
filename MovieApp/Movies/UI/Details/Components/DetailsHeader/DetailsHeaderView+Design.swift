@@ -38,8 +38,6 @@ extension DetailsHeaderView: ConstructViewsProtocol {
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
 
-        gradientView.layer.addSublayer(makeBackgroundGradient())
-
         userScoreLabel.text = "User Score"
         userScoreLabel.textColor = .white
         userScoreLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
@@ -60,6 +58,11 @@ extension DetailsHeaderView: ConstructViewsProtocol {
 
     func defineLayoutForViews() {
         posterImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.size.equalTo(self.snp.width)
+        }
+
+        gradientView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
@@ -100,7 +103,7 @@ extension DetailsHeaderView: ConstructViewsProtocol {
         }
     }
 
-    private func makeBackgroundGradient() -> CAGradientLayer {
+    func makeBackgroundGradient() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = frame
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]

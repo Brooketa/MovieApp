@@ -26,6 +26,7 @@ class DetailsPresenter: NSObject {
                     reviewViewModel: self.getReviewViewModel(from: model.reviewDetails),
                     recommendedViewModel: DetailsRecommendedViewModel(from: model.recommendedDetails))
             }
+            .receive(on: RunLoop.main, options: nil)
             .eraseToAnyPublisher()
     }
 

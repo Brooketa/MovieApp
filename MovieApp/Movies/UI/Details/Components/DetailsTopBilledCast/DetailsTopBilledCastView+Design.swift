@@ -31,25 +31,27 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
         fullCastButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         fullCastButton.setTitleColor(.darkBlue, for: .normal)
         fullCastButton.setTitleColor(.lightGray, for: .highlighted)
+        fullCastButton.titleLabel?.textAlignment = .right
 
         collectionView.clipsToBounds = false
+        collectionView.backgroundColor = .white
     }
 
     func defineLayoutForViews() {
         topBilledCastLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(20)
+            make.leading.top.equalToSuperview().offset(16)
             make.trailing.equalTo(fullCastButton.snp.leading)
         }
 
         fullCastButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
             make.centerY.equalTo(topBilledCastLabel.snp.centerY)
+            make.width.equalTo(140)
         }
 
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(topBilledCastLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(20)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 

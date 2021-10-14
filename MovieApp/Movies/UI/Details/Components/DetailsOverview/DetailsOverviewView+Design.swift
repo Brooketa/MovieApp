@@ -44,12 +44,12 @@ extension DetailsOverviewView: ConstructViewsProtocol {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(overviewLabel.snp.bottom)
             make.leading.trailing.equalToSuperview().inset(15)
-            make.bottom.equalTo(stackView.snp.top)
         }
 
         stackView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(30)
             make.leading.trailing.equalToSuperview().inset(15)
-            make.bottom.equalToSuperview().inset(30)
+            make.bottom.equalToSuperview().inset(20)
         }
     }
 

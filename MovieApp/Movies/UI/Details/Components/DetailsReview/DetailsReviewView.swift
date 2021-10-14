@@ -9,8 +9,8 @@ class DetailsReviewView: UIView {
 
     private var cancellables = Set<AnyCancellable>()
 
-    private let readTheRest = "read the rest"
-    private let hide = "hide"
+    private let showMore = "show more"
+    private let showLess = "show less"
 
     private let darkBlueColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkBlue]
 
@@ -34,9 +34,14 @@ class DetailsReviewView: UIView {
         defineLayoutForViews()
     }
 
-    public func set(from model: ReviewViewModel) {
-        authorView.set(from: model.author, createdAt: model.createdAt)
-        contentLabel.attributedText = reviewAttributedText(reviewContent: model.reviewContent, shouldExpand: false)
+    func setReview(from viewModel: DetailsReviewViewModel) {
+        guard let reviewViewModel = viewModel.reviews.first else { return }
+
+        authorView.set(from: reviewViewModel.author, createdAt: reviewViewModel.createdAt)
+        contentLabel.attributedText = reviewAttributedText(
+            reviewContent: reviewViewModel.reviewContent,
+            shouldExpand: false)
+
         contentLabel
             .tap
             .sink(receiveValue: { [weak self] gesture in
@@ -44,7 +49,7 @@ class DetailsReviewView: UIView {
 
                 guard let tapGesture = gesture.recognizer as? UITapGestureRecognizer else { return }
 
-                self.handleLabelTap(gesture: tapGesture, reviewContent: model.reviewContent)
+                self.handleLabelTap(gesture: tapGesture, reviewContent: reviewViewModel.reviewContent)
             })
             .store(in: &cancellables)
     }
@@ -54,7 +59,7 @@ class DetailsReviewView: UIView {
             string: shouldExpand ? "\(reviewContent) " : "\(String(reviewContent.prefix(100)))... ")
 
         let readMoreString = NSAttributedString(
-            string: shouldExpand ? hide : readTheRest,
+            string: shouldExpand ? showLess : showMore,
             attributes: darkBlueColorAttributes)
 
         reviewString.append(readMoreString)
@@ -63,34 +68,15 @@ class DetailsReviewView: UIView {
     }
 
     private func handleLabelTap(gesture: UITapGestureRecognizer, reviewContent: String) {
-        let readMoreStartLocation = 108
-        let readMoreRange = NSRange(location: readMoreStartLocation, length: readTheRest.count)
-        let hideRange = NSRange(location: reviewContent.count + 1, length: hide.count)
-
         if gesture.state == .ended {
             guard let attributedString = contentLabel.attributedText else { return }
-            let textStorage = NSTextStorage(attributedString: attributedString)
 
-            let layoutManager = NSLayoutManager()
-            textStorage.addLayoutManager(layoutManager)
+            let showMoreRange = (attributedString.string as NSString).range(of: showMore)
+            let showLessRange = (attributedString.string as NSString).range(of: showLess)
 
-            let textContainer = NSTextContainer(size: contentLabel.bounds.size)
-            layoutManager.addTextContainer(textContainer)
-
-            let location = gesture.location(in: contentLabel)
-            let characterIndex = layoutManager.characterIndex(
-                    for: location,
-                    in: textContainer,
-                    fractionOfDistanceBetweenInsertionPoints: nil)
-            if
-                characterIndex >= readMoreRange.location,
-                characterIndex < readMoreRange.location + readMoreRange.length
-            {
+            if gesture.didTapAttributedTextInLabel(label: contentLabel, inRange: showMoreRange) {
                 contentLabel.attributedText = reviewAttributedText(reviewContent: reviewContent, shouldExpand: true)
-            } else if
-                characterIndex >= hideRange.location,
-                characterIndex < hideRange.location + hideRange.length
-            {
+            } else if gesture.didTapAttributedTextInLabel(label: contentLabel, inRange: showLessRange) {
                 contentLabel.attributedText = reviewAttributedText(
                     reviewContent: reviewContent,
                     shouldExpand: false)

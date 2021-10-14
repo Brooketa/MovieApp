@@ -35,7 +35,7 @@ class DetailsRecommendedView: UIView {
         defineLayoutForViews()
     }
 
-    public func setRecommended(viewModel: DetailsRecommendedViewModel) {
+    func setRecommended(from viewModel: DetailsRecommendedViewModel) {
         updateRecommendedDataSource(with: viewModel.recommendedMovies)
     }
 
