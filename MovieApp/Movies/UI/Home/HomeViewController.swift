@@ -13,9 +13,11 @@ class HomeViewController: UIViewController {
     private var movieDataSource: MovieDataSource!
     private var movieSnapshot: MovieSnapshot!
 
-    private var selectedSubcategories: [HomeSection: Subcategory] = [.whatsPopular: .action,
-                                                                     .topRated: .action,
-                                                                     .trending: .today]
+    private var selectedSubcategories = CurrentValueSubject<[HomeSection: Subcategory], Never>([
+        .whatsPopular: .action,
+        .topRated: .action,
+        .trending: .today
+    ])
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -39,15 +41,22 @@ class HomeViewController: UIViewController {
 
     private func getAllMovies() {
         HomeSection.allCases.forEach { section in
-            guard let selectedSubcategory = self.selectedSubcategories[section] else { return }
+            selectedSubcategories
+                .compactMap { $0[section] }
+                .removeDuplicates()
+                .map { [weak self] subcategory -> AnyPublisher<[MovieViewModel], Never> in
+                    guard let self = self else { return Empty<[MovieViewModel], Never>().eraseToAnyPublisher() }
 
-            homePresenter
-                .movies(section: section, subcategory: selectedSubcategory)
-                .eraseToAnyPublisher()
+                    return self.homePresenter
+                        .movies(section: section, subcategory: subcategory)
+                        .eraseToAnyPublisher()
+                }
+                .switchToLatest()
                 .sink { [weak self] movies in
                     guard let self = self else { return }
 
-                    self.updateMovieDataSource(with: movies, for: section) }
+                    self.updateMovieDataSource(with: movies, for: section)
+                }
                 .store(in: &cancellables)
         }
     }
@@ -152,7 +161,7 @@ class HomeViewController: UIViewController {
         sectionHeader.setTitle(sectionTitle: sectionTitle)
         configureSectionHeaderSubscription(sectionHeader: sectionHeader, section: section)
 
-        guard let selectedSubcategory = selectedSubcategories[section] else { return }
+        guard let selectedSubcategory = selectedSubcategories.value[section] else { return }
 
         sectionHeader.setSelected(subcategory: selectedSubcategory)
     }
@@ -160,19 +169,10 @@ class HomeViewController: UIViewController {
     private func configureSectionHeaderSubscription(sectionHeader: HomeSectionHeader, section: HomeSection) {
         sectionHeader
             .subcategoryTap
-            .flatMap { [weak self] subcategory -> AnyPublisher<[MovieViewModel], Never> in
-                guard let self = self else { return Empty<[MovieViewModel], Never>().eraseToAnyPublisher() }
-
-                self.selectedSubcategories[section] = subcategory
-
-                return self.homePresenter
-                    .movies(section: section, subcategory: subcategory)
-                    .eraseToAnyPublisher()
-            }
-            .sink { [weak self] movies in
+            .sink { [weak self] subcategory in
                 guard let self = self else { return }
 
-                self.updateMovieDataSource(with: movies, for: section)
+                self.selectedSubcategories.value[section] = subcategory
             }
             .store(in: &sectionHeader.cancellables)
     }

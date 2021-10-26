@@ -74,6 +74,8 @@ class FavoritesViewController: UIViewController {
     }
 
     private func updateFavoritesDataSource(with viewModel: FavoritesMovieViewModel) {
+        guard !favoritesSnapshot.itemIdentifiers(inSection: FavoritesSection.main).contains(viewModel) else { return }
+
         favoritesSnapshot.appendItems([viewModel], toSection: FavoritesSection.main)
         favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: true, completion: nil)
     }

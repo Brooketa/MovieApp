@@ -63,7 +63,7 @@ extension HomeViewController: ConstructViewsProtocol {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15)
         section.boundarySupplementaryItems = [sectionHeader]
 
         return UICollectionViewCompositionalLayout(section: section)
