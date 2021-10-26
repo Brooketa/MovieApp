@@ -81,11 +81,16 @@ class AppRouter: AppRouterProtocol {
     }
 
     func showDetails(movieID: Int) {
-        guard let homeNavigationController = homeNavigationController else { return }
+        guard
+            let selectedViewController = tabBarController?.selectedViewController as? UINavigationController
+        else {
+            return
+        }
 
         let detailsViewController: DetailsViewController = container.resolve()
         detailsViewController.set(movieID: movieID)
-        homeNavigationController.pushViewController(detailsViewController, animated: true)
+
+        selectedViewController.pushViewController(detailsViewController, animated: true)
     }
 
 }

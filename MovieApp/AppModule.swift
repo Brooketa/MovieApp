@@ -135,7 +135,7 @@ private extension AppModule {
 
     private func registerPresenters(in container: Resolver) {
         container
-            .register { SearchPresenter(searchUseCase: container.resolve()) }
+            .register { SearchPresenter(searchUseCase: container.resolve(), appRouter: container.resolve()) }
             .scope(.unique)
 
         container
@@ -143,11 +143,11 @@ private extension AppModule {
             .scope(.unique)
 
         container
-            .register { DetailsPresenter(detailsUseCase: container.resolve()) }
+            .register { DetailsPresenter(detailsUseCase: container.resolve(), appRouter: container.resolve()) }
             .scope(.unique)
 
         container
-            .register { FavoritesPresenter(favoritesUseCase: container.resolve()) }
+            .register { FavoritesPresenter(favoritesUseCase: container.resolve(), appRouter: container.resolve()) }
             .scope(.unique)
     }
 

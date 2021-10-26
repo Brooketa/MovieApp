@@ -16,4 +16,10 @@ extension UIViewController {
         navigationItem.titleView = UIImageView(image: UIImage(named: "tmdb-logo"))
     }
 
+    public func setDefaultBackButtonTitle() {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+    }
+
 }

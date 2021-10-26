@@ -1,3 +1,4 @@
+import Combine
 import UIKit
 
 class DetailsRecommendedView: UIView {
@@ -10,6 +11,8 @@ class DetailsRecommendedView: UIView {
     var recommendationsLabel: UILabel!
     var collectionView: UICollectionView!
 
+    var recommendedMovieTap = PassthroughSubject<Int, Never>()
+
     private var recommendedDataSource: RecommendedDataSource!
     private var recommendedSnapshot: RecommendedSnapshot!
 
@@ -17,6 +20,8 @@ class DetailsRecommendedView: UIView {
         super.init(frame: .zero)
 
         buildViews()
+        collectionView.delegate = self
+
         recommendedDataSource = makeRecommendedDataSource()
     }
 
@@ -24,6 +29,8 @@ class DetailsRecommendedView: UIView {
         super.init(frame: frame)
 
         buildViews()
+        collectionView.delegate = self
+
         recommendedDataSource = makeRecommendedDataSource()
     }
 
@@ -65,6 +72,16 @@ class DetailsRecommendedView: UIView {
     private func updateRecommendedDataSource(with viewModels: [RecommendedMovieViewModel]) {
         recommendedSnapshot.appendItems(viewModels, toSection: RecommendedSection.main)
         recommendedDataSource.apply(recommendedSnapshot, animatingDifferences: true, completion: nil)
+    }
+
+}
+
+extension DetailsRecommendedView: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = recommendedDataSource.itemIdentifier(for: indexPath) else { return }
+
+        recommendedMovieTap.send(viewModel.movieID)
     }
 
 }

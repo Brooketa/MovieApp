@@ -38,10 +38,6 @@ class HomeViewController: UIViewController {
         buildViews()
         collectionView.delegate = self
 
-        let backItem = UIBarButtonItem()
-        backItem.title = ""
-        navigationItem.backBarButtonItem = backItem
-
         movieDataSource = makeMovieDataSource()
         getAllMovies()
         configureSearchSubscription()

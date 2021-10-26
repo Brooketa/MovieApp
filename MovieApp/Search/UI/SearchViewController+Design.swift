@@ -16,6 +16,9 @@ extension SearchViewController: ConstructViewsProtocol {
         searchTextField = SearchTextField()
         view.addSubview(searchTextField)
 
+        dismissKeyboardView = UIView()
+        view.addSubview(dismissKeyboardView)
+
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
         collectionView.register(
             SearchCollectionViewCell.self,
@@ -25,6 +28,9 @@ extension SearchViewController: ConstructViewsProtocol {
 
     func styleViews() {
         setDefaultNavBar()
+        setDefaultBackButtonTitle()
+        navigationItem.hidesBackButton = true
+
         view.backgroundColor = .white
 
         cancelButton.setTitle("Cancel", for: .normal)
@@ -35,6 +41,7 @@ extension SearchViewController: ConstructViewsProtocol {
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         collectionView.alwaysBounceVertical = true
         collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
     }
 
     func defineLayoutForViews() {
@@ -50,6 +57,11 @@ extension SearchViewController: ConstructViewsProtocol {
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().inset(15)
             make.height.equalTo(45)
+        }
+
+        dismissKeyboardView.snp.makeConstraints { make in
+            make.top.equalTo(searchTextField.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
 
         collectionView.snp.makeConstraints { make in

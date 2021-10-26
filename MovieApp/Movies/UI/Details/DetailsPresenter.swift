@@ -4,11 +4,17 @@ import UIKit
 class DetailsPresenter {
 
     private let detailsUseCase: DetailsUseCaseProtocol
+    private let appRouter: AppRouterProtocol
 
     let dateFormatter = DateFormatter()
 
-    init(detailsUseCase: DetailsUseCaseProtocol) {
+    init(detailsUseCase: DetailsUseCaseProtocol, appRouter: AppRouterProtocol) {
         self.detailsUseCase = detailsUseCase
+        self.appRouter = appRouter
+    }
+
+    func showRecommendedMovieDetails(movieID: Int) {
+        appRouter.showDetails(movieID: movieID)
     }
 
     func movieDetails(movieID: Int) -> AnyPublisher<DetailsViewModel, Error> {

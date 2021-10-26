@@ -32,6 +32,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        configureRecommendedMovieSubscription()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +52,17 @@ class DetailsViewController: UIViewController {
                 self.topBilledCastView.setCast(from: viewModel.topCastViewModel)
                 self.reviewView.setReview(from: viewModel.reviewViewModel)
                 self.recommendedView.setRecommended(from: viewModel.recommendedViewModel)
+            })
+            .store(in: &cancellables)
+    }
+
+    private func configureRecommendedMovieSubscription() {
+        recommendedView
+            .recommendedMovieTap
+            .sink(receiveValue: { [weak self] movieID in
+                guard let self = self else { return }
+
+                self.detailsPresenter.showRecommendedMovieDetails(movieID: movieID)
             })
             .store(in: &cancellables)
     }

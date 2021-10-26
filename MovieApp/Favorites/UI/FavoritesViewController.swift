@@ -31,6 +31,8 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        collectionView.delegate = self
+
         favoritesDataSource = makeFavoritesDataSource()
 
         getFavoriteMovies()
@@ -74,10 +76,10 @@ class FavoritesViewController: UIViewController {
     }
 
     private func updateFavoritesDataSource(with viewModel: FavoritesMovieViewModel) {
-        guard !favoritesSnapshot.itemIdentifiers(inSection: FavoritesSection.main).contains(viewModel) else { return }
-
-        favoritesSnapshot.appendItems([viewModel], toSection: FavoritesSection.main)
-        favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: true, completion: nil)
+        if !favoritesSnapshot.itemIdentifiers(inSection: FavoritesSection.main).contains(viewModel) {
+            favoritesSnapshot.appendItems([viewModel], toSection: FavoritesSection.main)
+            favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: true, completion: nil)
+        }
     }
 
     private func clearFavoritesDataSource() {
@@ -95,6 +97,16 @@ class FavoritesViewController: UIViewController {
                 self.favoritesPresenter.toggleFavoriteMovie(movieID: movieID)
             })
             .store(in: &cell.cancellables)
+    }
+
+}
+
+extension FavoritesViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = favoritesDataSource.itemIdentifier(for: indexPath) else { return }
+
+        favoritesPresenter.showDetails(movieID: viewModel.movieID)
     }
 
 }

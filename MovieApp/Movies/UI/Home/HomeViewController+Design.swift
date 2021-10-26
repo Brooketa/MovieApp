@@ -29,6 +29,8 @@ extension HomeViewController: ConstructViewsProtocol {
 
     func styleViews() {
         setDefaultNavBar()
+        setDefaultBackButtonTitle()
+
         view.backgroundColor = .white
 
         collectionView.showsVerticalScrollIndicator = false

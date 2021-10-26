@@ -9,6 +9,7 @@ class SearchViewController: UIViewController {
 
     var cancelButton: UIButton!
     var searchTextField: SearchTextField!
+    var dismissKeyboardView: UIView!
     var collectionView: UICollectionView!
 
     private var searchPresenter: SearchPresenter!
@@ -30,14 +31,13 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        collectionView.delegate = self
 
         searchDataSource = makeSearchDataSource()
 
         configureKeyboardDismissTap()
         configureCancelButtonSubscription()
         configureTextFieldSubscription()
-
-        navigationItem.hidesBackButton = true
 
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
     }
 
     private func configureKeyboardDismissTap() {
-        view
+        dismissKeyboardView
             .tap
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
@@ -159,6 +159,17 @@ class SearchViewController: UIViewController {
                     navigationController.popViewController(animated: false)
                 })
         }
+    }
+
+}
+
+extension SearchViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchTextField.resignFirstResponder()
+        guard let viewModel = searchDataSource.itemIdentifier(for: indexPath) else { return }
+
+        searchPresenter.showDetails(movieID: viewModel.movieID)
     }
 
 }

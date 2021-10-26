@@ -22,6 +22,7 @@ extension FavoritesViewController: ConstructViewsProtocol {
 
     func styleViews() {
         setDefaultNavBar()
+        setDefaultBackButtonTitle()
         view.backgroundColor = .white
 
         favoritesLabel.text = "Favorites"

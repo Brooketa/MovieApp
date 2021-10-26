@@ -1,9 +1,15 @@
 import Combine
 import UIKit
 
-class SearchPresenter: NSObject {
+class SearchPresenter {
 
     private let searchUseCase: SearchUseCase
+    private let appRouter: AppRouterProtocol
+
+    init(searchUseCase: SearchUseCase, appRouter: AppRouterProtocol) {
+        self.appRouter = appRouter
+        self.searchUseCase = searchUseCase
+    }
 
     public func searchMovies(query: String) -> AnyPublisher<[SearchMovieViewModel], Never> {
         searchUseCase
@@ -14,8 +20,7 @@ class SearchPresenter: NSObject {
             .eraseToAnyPublisher()
     }
 
-    init(searchUseCase: SearchUseCase) {
-        self.searchUseCase = searchUseCase
+    func showDetails(movieID: Int) {
+        appRouter.showDetails(movieID: movieID)
     }
-
 }
