@@ -43,4 +43,9 @@ class HomePresenter: NSObject {
     func showSearch() {
         appRouter.showSearch()
     }
+
+    func showDetails(movieID: Int) {
+        appRouter.showDetails(movieID: movieID)
+    }
+
 }

@@ -38,12 +38,15 @@ extension DetailsHeaderView: ConstructViewsProtocol {
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
 
+        gradientView.alpha = 0.0
+
         userScoreLabel.text = "User Score"
         userScoreLabel.textColor = .white
         userScoreLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 
         titleLabel.textColor = .white
         titleLabel.textAlignment = .left
+        titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
 
         dateReleasedLabel.textColor = .white

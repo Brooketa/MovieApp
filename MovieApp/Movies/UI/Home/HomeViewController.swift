@@ -36,6 +36,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         buildViews()
+        collectionView.delegate = self
+
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+
         movieDataSource = makeMovieDataSource()
         getAllMovies()
         configureSearchSubscription()
@@ -188,6 +194,16 @@ class HomeViewController: UIViewController {
                 self.selectedSubcategories.value[section] = subcategory
             }
             .store(in: &sectionHeader.cancellables)
+    }
+
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewModel = movieDataSource.itemIdentifier(for: indexPath) else { return }
+
+        homePresenter.showDetails(movieID: viewModel.movieID)
     }
 
 }

@@ -80,4 +80,12 @@ class AppRouter: AppRouterProtocol {
         homeNavigationController.pushViewController(searchViewController, animated: false)
     }
 
+    func showDetails(movieID: Int) {
+        guard let homeNavigationController = homeNavigationController else { return }
+
+        let detailsViewController: DetailsViewController = container.resolve()
+        detailsViewController.set(movieID: movieID)
+        homeNavigationController.pushViewController(detailsViewController, animated: true)
+    }
+
 }

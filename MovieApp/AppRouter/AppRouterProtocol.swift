@@ -4,4 +4,6 @@ protocol AppRouterProtocol {
 
     func showSearch()
 
+    func showDetails(movieID: Int)
+
 }

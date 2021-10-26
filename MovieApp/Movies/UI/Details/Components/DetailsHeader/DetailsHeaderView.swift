@@ -50,6 +50,12 @@ class DetailsHeaderView: UIView {
 
     public func configureGradient() {
         gradientView.layer.addSublayer(makeBackgroundGradient())
+
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let self = self else { return }
+
+            self.gradientView.alpha = 1.0
+        }
     }
 
     private func titleAttributedText(title: String, year: Int) -> NSMutableAttributedString {
