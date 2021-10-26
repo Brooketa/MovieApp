@@ -1,12 +1,15 @@
+import Combine
 import UIKit
 import Kingfisher
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class MovieCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = String(describing: HomeCollectionViewCell.self)
+    static let identifier = String(describing: MovieCollectionViewCell.self)
 
     var movieImageView: UIImageView!
     var favoriteButton: FavoriteButton!
+
+    var cancellables = Set<AnyCancellable>()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,6 +23,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
         buildViews()
     }
 
+    override func prepareForReuse() {
+        cancellables = Set<AnyCancellable>()
+    }
+
     public override func didMoveToSuperview() {
         super.didMoveToSuperview()
 
@@ -28,5 +35,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
     public func set(viewModel: MovieViewModel) {
         movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
+        favoriteButton.isSelected = viewModel.isFavorite
     }
 }

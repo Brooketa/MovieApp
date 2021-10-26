@@ -1,19 +1,17 @@
 import UIKit
 
-struct MovieViewModel: Hashable {
+struct MovieViewModel: Codable, Hashable {
 
     let uuid: UUID
-    let movieTitle: String
-    let movieDescription: String
+    let movieID: Int
     let moviePosterImageURL: URL?
-    let movieGenres: [Int]
+    let isFavorite: Bool
 
     init(with model: MovieUseCaseModel) {
         uuid = UUID()
-        movieTitle = model.movieTitle
-        movieDescription = model.movieDescription
+        movieID = model.movieID
         moviePosterImageURL = URL(string: model.moviePosterImagePath)
-        movieGenres = model.movieGenres
+        isFavorite = model.isFavorite
     }
 
 }

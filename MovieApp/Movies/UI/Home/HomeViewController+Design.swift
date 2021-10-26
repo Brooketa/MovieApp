@@ -18,8 +18,8 @@ extension HomeViewController: ConstructViewsProtocol {
             withReuseIdentifier: HomeSectionHeader.identifier)
 
         collectionView.register(
-            HomeCollectionViewCell.self,
-            forCellWithReuseIdentifier: HomeCollectionViewCell.identifier)
+            MovieCollectionViewCell.self,
+            forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
 
         view.addSubview(collectionView)
 

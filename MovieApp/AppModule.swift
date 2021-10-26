@@ -64,11 +64,20 @@ private extension AppModule {
             .register { SearchDataSource(searchClient: container.resolve()) }
             .implements(SearchDataSourceProtocol.self)
             .scope(.application)
+
+        container
+            .register { FavoritesLocalDataSource() }
+            .implements(FavoritesLocalDataSourceProtocol.self)
+            .scope(.application)
     }
 
     private func registerRepositories(in container: Resolver) {
         container
-            .register { MovieRepository(movieDataSource: container.resolve()) }
+            .register {
+                MovieRepository(
+                    movieDataSource: container.resolve(),
+                    favoritesDataSource: container.resolve())
+            }
             .implements(MovieRepositoryProtocol.self)
             .scope(.application)
 
@@ -112,6 +121,10 @@ private extension AppModule {
         container
             .register { DetailsPresenter(detailsUseCase: container.resolve()) }
             .scope(.unique)
+
+        container
+            .register { FavoritesPresenter() }
+            .scope(.unique)
     }
 
     private func registerViewControllers(in container: Resolver) {
@@ -125,6 +138,10 @@ private extension AppModule {
 
         container
             .register { SearchViewController(presenter: container.resolve()) }
+            .scope(.unique)
+
+        container
+            .register { FavoritesViewController(presenter: container.resolve()) }
             .scope(.unique)
     }
 

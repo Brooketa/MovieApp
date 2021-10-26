@@ -14,7 +14,6 @@ class HomePresenter: NSObject {
         case .whatsPopular:
             return movieUseCase
                 .fetchPopularMovies(subcategory: subcategory)
-                .replaceError(with: [])
                 .map { $0.map { MovieViewModel(with: $0) } }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
@@ -22,7 +21,6 @@ class HomePresenter: NSObject {
         case .topRated:
             return movieUseCase
                 .fetchTopRatedMovies(subcategory: subcategory)
-                .replaceError(with: [])
                 .map { $0.map { MovieViewModel(with: $0) } }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
@@ -30,11 +28,14 @@ class HomePresenter: NSObject {
         case .trending:
             return movieUseCase
                 .fetchTrendingMovies(subcategory: subcategory)
-                .replaceError(with: [])
                 .map { $0.map { MovieViewModel(with: $0) } }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
         }
+    }
+
+    func toggleFavoriteMovie(movieID: Int) {
+        movieUseCase.toggleFavorite(movieID: movieID)
     }
 
 }

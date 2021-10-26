@@ -20,15 +20,4 @@ class FavoriteButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func changeAppearance (_ sender: UIButton) {
-        isSelected ? setDeselected() : setSelected()
-    }
-
-    func setSelected() {
-        isSelected = true
-    }
-
-    func setDeselected() {
-        isSelected = false
-    }
 }

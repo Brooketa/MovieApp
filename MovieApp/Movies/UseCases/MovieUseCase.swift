@@ -4,7 +4,11 @@ class MovieUseCase: MovieUseCaseProtocol {
 
     private let movieRepository: MovieRepositoryProtocol
 
-    func fetchPopularMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
+    init(movieRepository: MovieRepositoryProtocol) {
+        self.movieRepository = movieRepository
+    }
+
+    func fetchPopularMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Never> {
         movieRepository
             .fetchPopularMovies()
             .map { $0.compactMap {
@@ -22,7 +26,7 @@ class MovieUseCase: MovieUseCaseProtocol {
             .eraseToAnyPublisher()
     }
 
-    func fetchTopRatedMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
+    func fetchTopRatedMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Never> {
         movieRepository
             .fetchTopRatedMovies()
             .map { $0.compactMap {
@@ -40,7 +44,7 @@ class MovieUseCase: MovieUseCaseProtocol {
             .eraseToAnyPublisher()
     }
 
-    func fetchTrendingMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Error> {
+    func fetchTrendingMovies(subcategory: Subcategory) -> AnyPublisher<[MovieUseCaseModel], Never> {
         movieRepository
             .fetchTrendingMovies()
             .map { $0.compactMap {
@@ -58,8 +62,8 @@ class MovieUseCase: MovieUseCaseProtocol {
             .eraseToAnyPublisher()
     }
 
-    init(movieRepository: MovieRepositoryProtocol) {
-        self.movieRepository = movieRepository
+    func toggleFavorite(movieID: Int) {
+        movieRepository.toggleFavorite(movieID: movieID)
     }
 
 }

@@ -5,6 +5,7 @@ struct MovieUseCaseModel {
     let movieDescription: String
     let moviePosterImagePath: String
     let movieGenres: [Int]
+    let isFavorite: Bool
 
     init(from model: MovieRepositoryModel) {
         movieID = model.movieID
@@ -12,6 +13,7 @@ struct MovieUseCaseModel {
         movieDescription = model.movieDescription
         moviePosterImagePath = model.moviePosterImagePath
         movieGenres = model.movieGenres
+        isFavorite = model.isFavorite
     }
 
 }

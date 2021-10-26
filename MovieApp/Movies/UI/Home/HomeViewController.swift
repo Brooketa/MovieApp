@@ -33,11 +33,15 @@ class HomeViewController: UIViewController {
 
         buildViews()
         movieDataSource = makeMovieDataSource()
+        getAllMovies()
+    }
 
+    private func getAllMovies() {
         HomeSection.allCases.forEach { section in
-            let subcategory = section == .trending ? Subcategory.today : Subcategory.action
+            guard let selectedSubcategory = self.selectedSubcategories[section] else { return }
+
             homePresenter
-                .movies(section: section, subcategory: subcategory)
+                .movies(section: section, subcategory: selectedSubcategory)
                 .eraseToAnyPublisher()
                 .sink { [weak self] movies in
                     guard let self = self else { return }
@@ -50,17 +54,19 @@ class HomeViewController: UIViewController {
     private func makeMovieDataSource() -> MovieDataSource {
         let movieDataSource = MovieDataSource(
             collectionView: collectionView,
-            cellProvider: { collectionView, indexPath, movieViewModel in
+            cellProvider: { [weak self] collectionView, indexPath, movieViewModel in
+                guard let self = self else { return nil }
+
                 guard
                     let cell = collectionView.dequeueReusableCell(
-                        withReuseIdentifier: HomeCollectionViewCell.identifier,
-                        for: indexPath) as? HomeCollectionViewCell
+                        withReuseIdentifier: MovieCollectionViewCell.identifier,
+                        for: indexPath) as? MovieCollectionViewCell
                 else {
                     return UICollectionViewCell()
                 }
 
                 cell.set(viewModel: movieViewModel)
-
+                self.configureFavoriteButtonSubscription(cell: cell, movieID: movieViewModel.movieID)
                 return cell
             })
 
@@ -88,7 +94,19 @@ class HomeViewController: UIViewController {
     private func updateMovieDataSource(with viewModels: [MovieViewModel], for section: HomeSection) {
         movieSnapshot.deleteItems(movieSnapshot.itemIdentifiers(inSection: section))
         movieSnapshot.appendItems(viewModels, toSection: section)
-        movieDataSource.apply(movieSnapshot, animatingDifferences: true, completion: nil)
+        movieDataSource.apply(movieSnapshot, animatingDifferences: false, completion: nil)
+    }
+
+    private func configureFavoriteButtonSubscription(cell: MovieCollectionViewCell, movieID: Int) {
+        cell
+            .favoriteButton
+            .tap
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+
+                self.homePresenter.toggleFavoriteMovie(movieID: movieID)
+            })
+            .store(in: &cell.cancellables)
     }
 
     // MARK: HomeSectionHeader Configuration
