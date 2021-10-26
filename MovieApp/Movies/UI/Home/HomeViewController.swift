@@ -1,5 +1,6 @@
 import Combine
 import UIKit
+import Resolver
 
 class HomeViewController: UIViewController {
 

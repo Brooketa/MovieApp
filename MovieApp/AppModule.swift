@@ -47,6 +47,11 @@ private extension AppModule {
             .register { SearchClient() }
             .implements(SearchClientProtocol.self)
             .scope(.application)
+
+        container
+            .register { FavoritesClient() }
+            .implements(FavoritesClientProtocol.self)
+            .scope(.application)
     }
 
     private func registerDataSources(in container: Resolver) {
@@ -63,6 +68,11 @@ private extension AppModule {
         container
             .register { SearchDataSource(searchClient: container.resolve()) }
             .implements(SearchDataSourceProtocol.self)
+            .scope(.application)
+
+        container
+            .register { FavoritesDataSource(favoritesClient: container.resolve()) }
+            .implements(FavoritesDataSourceProtocol.self)
             .scope(.application)
 
         container
@@ -90,6 +100,15 @@ private extension AppModule {
             .register { SearchRepository(searchDataSource: container.resolve()) }
             .implements(SearchRepositoryProtocol.self)
             .scope(.application)
+
+        container
+            .register {
+                FavoritesRepository(
+                    favoritesDataSource: container.resolve(),
+                    favoritesLocalDataSource: container.resolve())
+            }
+            .implements(FavoritesRepositoryProtocol.self)
+            .scope(.application)
     }
 
     private func registerUseCases(in container: Resolver) {
@@ -107,6 +126,11 @@ private extension AppModule {
             .register { SearchUseCase(searchRepository: container.resolve()) }
             .implements(SearchUseCaseProtocol.self)
             .scope(.application)
+
+        container
+            .register { FavoritesUseCase(favoritesRepository: container.resolve()) }
+            .implements(FavoritesUseCaseProtocol.self)
+            .scope(.application)
     }
 
     private func registerPresenters(in container: Resolver) {
@@ -123,7 +147,7 @@ private extension AppModule {
             .scope(.unique)
 
         container
-            .register { FavoritesPresenter() }
+            .register { FavoritesPresenter(favoritesUseCase: container.resolve()) }
             .scope(.unique)
     }
 

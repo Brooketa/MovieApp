@@ -37,4 +37,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
         movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
         favoriteButton.isSelected = viewModel.isFavorite
     }
+
+    public func set(viewModel: FavoritesMovieViewModel) {
+        movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
+        favoriteButton.isSelected = viewModel.isFavorite
+    }
+
 }
