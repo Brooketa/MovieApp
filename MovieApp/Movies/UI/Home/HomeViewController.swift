@@ -7,6 +7,7 @@ class HomeViewController: UIViewController {
     typealias MovieDataSource = UICollectionViewDiffableDataSource<HomeSection, MovieViewModel>
     private typealias MovieSnapshot = NSDiffableDataSourceSnapshot<HomeSection, MovieViewModel>
 
+    var searchTextField: SearchTextField!
     var collectionView: UICollectionView!
 
     private var homePresenter: HomePresenter!
@@ -37,6 +38,7 @@ class HomeViewController: UIViewController {
         buildViews()
         movieDataSource = makeMovieDataSource()
         getAllMovies()
+        configureSearchSubscription()
     }
 
     private func getAllMovies() {
@@ -59,6 +61,17 @@ class HomeViewController: UIViewController {
                 }
                 .store(in: &cancellables)
         }
+    }
+
+    private func configureSearchSubscription() {
+        searchTextField
+            .tap
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+
+                self.homePresenter.showSearch()
+            })
+            .store(in: &cancellables)
     }
 
     private func makeMovieDataSource() -> MovieDataSource {

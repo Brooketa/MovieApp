@@ -33,8 +33,28 @@ class SearchViewController: UIViewController {
 
         searchDataSource = makeSearchDataSource()
 
+        configureKeyboardDismissTap()
         configureCancelButtonSubscription()
         configureTextFieldSubscription()
+
+        navigationItem.hidesBackButton = true
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+
+            self.searchTextField.becomeFirstResponder()
+        }
+    }
+
+    private func configureKeyboardDismissTap() {
+        view
+            .tap
+            .sink(receiveValue: { [weak self] _ in
+                guard let self = self else { return }
+
+                self.searchTextField.resignFirstResponder()
+            })
+            .store(in: &cancellables)
     }
 
     private func configureCancelButtonSubscription() {
@@ -43,7 +63,7 @@ class SearchViewController: UIViewController {
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
 
-                self.searchTextField.resignFirstResponder()
+                self.animateTextField(didBeginEditing: false)
             })
             .store(in: &cancellables)
     }
@@ -77,16 +97,6 @@ class SearchViewController: UIViewController {
                 self.animateTextField(didBeginEditing: true)
             })
             .store(in: &cancellables)
-
-        NotificationCenter
-            .default
-            .publisher(for: UITextField.textDidEndEditingNotification, object: searchTextField)
-            .sink(receiveValue: { [weak self] _ in
-                guard let self = self else { return }
-
-                self.animateTextField(didBeginEditing: false)
-            })
-            .store(in: &cancellables)
     }
 
     private func makeSearchDataSource() -> SearchDataSource {
@@ -116,21 +126,38 @@ class SearchViewController: UIViewController {
     }
 
     private func animateTextField(didBeginEditing: Bool) {
-        UIView.animate(withDuration: 0.2) { [weak self] in
-            guard let self = self else { return }
+        if didBeginEditing {
+            UIView.animate(withDuration: 0.2) { [weak self] in
+                guard let self = self else { return }
 
-            if didBeginEditing {
                 self.searchTextField.snp.updateConstraints { make in
                     make.trailing.equalToSuperview().inset(85)
                 }
                 self.cancelButton.alpha = 1.0
-            } else {
-                self.searchTextField.snp.updateConstraints { make in
-                    make.trailing.equalToSuperview().inset(15)
-                }
-                self.cancelButton.alpha = 0.0
+                self.view.layoutIfNeeded()
             }
-            self.view.layoutIfNeeded()
+        } else {
+            UIView.animate(
+                withDuration: 0.2,
+                animations: { [weak self] in
+                    guard let self = self else { return }
+
+                    self.searchTextField.snp.updateConstraints { make in
+                        make.trailing.equalToSuperview().inset(15)
+                    }
+                    self.cancelButton.alpha = 0.0
+                    self.view.layoutIfNeeded()
+                },
+                completion: { [weak self] _ in
+                    guard
+                        let self = self,
+                        let navigationController = self.navigationController
+                    else {
+                        return
+                    }
+
+                    navigationController.popViewController(animated: false)
+                })
         }
     }
 

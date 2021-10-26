@@ -73,4 +73,11 @@ class AppRouter: AppRouterProtocol {
         configureTabBarController()
     }
 
+    func showSearch() {
+        guard let homeNavigationController = homeNavigationController else { return }
+
+        let searchViewController: SearchViewController = container.resolve()
+        homeNavigationController.pushViewController(searchViewController, animated: false)
+    }
+
 }

@@ -4,9 +4,11 @@ import UIKit
 class HomePresenter: NSObject {
 
     private let movieUseCase: MovieUseCaseProtocol
+    private let appRouter: AppRouterProtocol
 
-    init(movieUseCase: MovieUseCaseProtocol) {
+    init(movieUseCase: MovieUseCaseProtocol, appRouter: AppRouterProtocol) {
         self.movieUseCase = movieUseCase
+        self.appRouter = appRouter
     }
 
     func movies(section: HomeSection, subcategory: Subcategory) -> AnyPublisher<[MovieViewModel], Never> {
@@ -38,4 +40,7 @@ class HomePresenter: NSObject {
         movieUseCase.toggleFavorite(movieID: movieID)
     }
 
+    func showSearch() {
+        appRouter.showSearch()
+    }
 }

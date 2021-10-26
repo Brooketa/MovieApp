@@ -139,7 +139,7 @@ private extension AppModule {
             .scope(.unique)
 
         container
-            .register { HomePresenter(movieUseCase: container.resolve()) }
+            .register { HomePresenter(movieUseCase: container.resolve(), appRouter: container.resolve()) }
             .scope(.unique)
 
         container

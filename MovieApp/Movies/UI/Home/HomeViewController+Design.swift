@@ -10,6 +10,9 @@ extension HomeViewController: ConstructViewsProtocol {
     }
 
     func createViews() {
+        searchTextField = SearchTextField()
+        view.addSubview(searchTextField)
+
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeCollectionViewLayout())
 
         collectionView.register(
@@ -22,7 +25,6 @@ extension HomeViewController: ConstructViewsProtocol {
             forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
 
         view.addSubview(collectionView)
-
     }
 
     func styleViews() {
@@ -34,15 +36,23 @@ extension HomeViewController: ConstructViewsProtocol {
     }
 
     func defineLayoutForViews() {
+        searchTextField.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(15)
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().inset(15)
+            make.height.equalTo(45)
+        }
+
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(searchTextField.snp.bottom).offset(15)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
         let headerFooterSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(90))
+            heightDimension: .absolute(75))
 
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerFooterSize,
@@ -63,7 +73,7 @@ extension HomeViewController: ConstructViewsProtocol {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 15, trailing: 15)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 15, bottom: 30, trailing: 15)
         section.boundarySupplementaryItems = [sectionHeader]
 
         return UICollectionViewCompositionalLayout(section: section)

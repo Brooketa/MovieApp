@@ -764,6 +764,7 @@
 				70B3102126F49295003EB574 /* FavoriteButton */,
 				70DA250326F34E100045B7EA /* MovieColletionViewCell */,
 				70A31B132702504C00E275FB /* ProgressView */,
+				70E7C1302714876A0052687A /* SearchTextField */,
 				70DA24FD26F344E50045B7EA /* UnderlinedButton */,
 			);
 			path = CoreUI;
@@ -850,7 +851,6 @@
 		70B404BA26E7A5D30012F23E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				70E7C1302714876A0052687A /* SearchTextField */,
 				70E7C12F2714875B0052687A /* SearchCollectionViewCell */,
 			);
 			path = Components;

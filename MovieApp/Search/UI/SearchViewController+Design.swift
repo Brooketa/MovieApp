@@ -46,14 +46,14 @@ extension SearchViewController: ConstructViewsProtocol {
         }
 
         searchTextField.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(15)
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().inset(15)
             make.height.equalTo(45)
         }
 
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchTextField.snp.bottom).offset(20)
+            make.top.equalTo(searchTextField.snp.bottom).offset(15)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
