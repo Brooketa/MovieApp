@@ -25,7 +25,7 @@ extension HomeSectionHeader: ConstructViewsProtocol {
         stackView.alignment = .fill
         stackView.axis = .vertical
 
-        sectionTitleLabel.textColor = .darkBlue
+        sectionTitleLabel.textColor = .primaryTitle
         sectionTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
     }
 

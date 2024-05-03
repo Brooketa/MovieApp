@@ -14,10 +14,10 @@ extension UnderlinedButton: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        changeTitleColor(color: .black)
+        changeTitleColor(color: .underlinedButtonTitle)
         setFontToRegular()
 
-        line.backgroundColor = .darkBlue
+        line.backgroundColor = .underline
     }
 
     func defineLayoutForViews() {

@@ -31,16 +31,16 @@ extension SearchViewController: ConstructViewsProtocol {
         setDefaultBackButtonTitle()
         navigationItem.hidesBackButton = true
 
-        view.backgroundColor = .white
+        view.backgroundColor = .primaryBackground
 
         cancelButton.setTitle(LocalizableString.cancel.localized, for: .normal)
-        cancelButton.setTitleColor(UIColor.darkBlue, for: .normal)
+        cancelButton.setTitleColor(.primaryTitle, for: .normal)
         cancelButton.setTitleColor(UIColor.lightGray, for: .highlighted)
         cancelButton.alpha = 0.0
 
         collectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         collectionView.alwaysBounceVertical = true
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .primaryBackground
         collectionView.showsVerticalScrollIndicator = false
     }
 

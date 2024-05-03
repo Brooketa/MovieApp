@@ -23,18 +23,20 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        backgroundColor = .primaryBackground
+
         topBilledCastLabel.text = LocalizableString.detailsTopBilledCastTitle.localized
-        topBilledCastLabel.textColor = .darkBlue
+        topBilledCastLabel.textColor = .primaryTitle
         topBilledCastLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 
         fullCastButton.setTitle(LocalizableString.detailsFullCastAndCrewButtonTitle.localized, for: .normal)
         fullCastButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
-        fullCastButton.setTitleColor(.darkBlue, for: .normal)
+        fullCastButton.setTitleColor(.primaryTitle, for: .normal)
         fullCastButton.setTitleColor(.lightGray, for: .highlighted)
         fullCastButton.titleLabel?.textAlignment = .right
 
         collectionView.clipsToBounds = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .primaryBackground
     }
 
     func defineLayoutForViews() {

@@ -31,10 +31,10 @@ extension HomeViewController: ConstructViewsProtocol {
         setDefaultNavBar()
         setDefaultBackButtonTitle()
 
-        view.backgroundColor = .white
+        view.backgroundColor = .primaryBackground
 
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .primaryBackground
     }
 
     func defineLayoutForViews() {

@@ -12,7 +12,7 @@ class DetailsReviewView: UIView {
     private let showMore = LocalizableString.detailsShowMore.localized
     private let showLess = LocalizableString.detailsShowLess.localized
 
-    private let darkBlueColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkBlue]
+    private let primaryColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.primaryTitle]
 
     init() {
         super.init(frame: .zero)
@@ -60,7 +60,7 @@ class DetailsReviewView: UIView {
 
         let readMoreString = NSAttributedString(
             string: shouldExpand ? showLess : showMore,
-            attributes: darkBlueColorAttributes)
+            attributes: primaryColorAttributes)
 
         reviewString.append(readMoreString)
 

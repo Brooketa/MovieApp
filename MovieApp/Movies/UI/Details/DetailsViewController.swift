@@ -33,6 +33,8 @@ class DetailsViewController: UIViewController {
 
         buildViews()
         configureRecommendedMovieSubscription()
+
+        tabBarController?.tabBar.barTintColor = .primaryBackground
     }
 
     override func viewDidAppear(_ animated: Bool) {

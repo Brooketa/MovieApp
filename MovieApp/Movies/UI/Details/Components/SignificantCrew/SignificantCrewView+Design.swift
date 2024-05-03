@@ -17,10 +17,10 @@ extension SignificantCrewView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        nameLabel.textColor = .black
+        nameLabel.textColor = .secondaryTitle
         nameLabel.font = UIFont.systemFont(ofSize: 14, weight: .heavy)
 
-        roleLabel.textColor = .black
+        roleLabel.textColor = .text
         roleLabel.font = UIFont.systemFont(ofSize: 14)
     }
 

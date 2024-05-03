@@ -20,7 +20,7 @@ extension DetailsRecommendedCollectionViewCell: ConstructViewsProtocol {
         backdropImageView.contentMode = .scaleAspectFill
         backdropImageView.configureRoundedCorners()
 
-        movieTitleLabel.textColor = .darkBlue
+        movieTitleLabel.textColor = .primaryTitle
         movieTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
     }
 

@@ -12,7 +12,8 @@ extension SearchTextField: ConstructViewsProtocol {
 
     func styleViews() {
         placeholder = LocalizableString.searchPlaceholder.localized
-        backgroundColor = UIColor(rgb: 0xEAEAEB)
+        backgroundColor = .searchTextField
+        tintColor = .primaryTitle
         clearButtonMode = .whileEditing
         configureRoundedCorners()
         leftViewMode = .always
@@ -25,7 +26,7 @@ extension SearchTextField: ConstructViewsProtocol {
         let searchIconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         let searchIconImage = UIImage(systemName: "magnifyingglass")
         searchIconImageView.image = searchIconImage
-        searchIconImageView.tintColor = UIColor.darkBlue
+        searchIconImageView.tintColor = .textFieldIcon
 
         return searchIconImageView
     }

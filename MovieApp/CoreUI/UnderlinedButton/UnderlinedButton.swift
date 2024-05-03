@@ -25,7 +25,7 @@ class UnderlinedButton: UIButton {
 
     func setSelected() {
         line.isHidden = false
-        changeTitleColor(color: .black)
+        changeTitleColor(color: .underlinedButtonTitle)
         setFontToBold()
     }
 

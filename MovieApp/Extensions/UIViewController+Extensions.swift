@@ -7,13 +7,15 @@ extension UIViewController {
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .darkBlue
+        appearance.backgroundColor = .navigationBackground
         navigationController.navigationBar.standardAppearance = appearance
         navigationController.navigationBar.scrollEdgeAppearance = navigationController.navigationBar.standardAppearance
 
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.tintColor = .white
-        navigationItem.titleView = UIImageView(image: UIImage(named: "tmdb-logo"))
+        let logoImageView = UIImageView(image: UIImage(named: "tmdb-logo"))
+        logoImageView.frame = CGRect(x: 0, y: 0, width: 100, height: 16)
+        navigationItem.titleView = logoImageView
     }
 
     public func setDefaultBackButtonTitle() {

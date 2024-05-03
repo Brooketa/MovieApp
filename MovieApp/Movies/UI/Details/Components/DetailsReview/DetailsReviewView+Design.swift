@@ -20,11 +20,13 @@ extension DetailsReviewView: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        backgroundColor = .primaryBackground
+
         socialLabel.text = LocalizableString.detailsSocialTitle.localized
-        socialLabel.textColor = .darkBlue
+        socialLabel.textColor = .primaryTitle
         socialLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 
-        contentLabel.textColor = .gray
+        contentLabel.textColor = .grayText
         contentLabel.font = .systemFont(ofSize: 14)
         contentLabel.numberOfLines = 0
         contentLabel.lineBreakMode = .byTruncatingTail

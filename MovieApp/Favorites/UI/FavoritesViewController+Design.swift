@@ -23,14 +23,14 @@ extension FavoritesViewController: ConstructViewsProtocol {
     func styleViews() {
         setDefaultNavBar()
         setDefaultBackButtonTitle()
-        view.backgroundColor = .white
+        view.backgroundColor = .primaryBackground
 
         favoritesLabel.text = LocalizableString.favoritesTitle.localized
-        favoritesLabel.textColor = UIColor.darkBlue
+        favoritesLabel.textColor = UIColor.primaryTitle
         favoritesLabel.font = .systemFont(ofSize: 20, weight: .bold)
 
         collectionView.showsVerticalScrollIndicator = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .primaryBackground
     }
 
     func defineLayoutForViews() {

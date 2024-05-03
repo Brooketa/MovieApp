@@ -20,12 +20,14 @@ extension DetailsRecommendedView: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        backgroundColor = .primaryBackground
+
         recommendationsLabel.text = LocalizableString.detailsRecommendationsTitle.localized
-        recommendationsLabel.textColor = .darkBlue
+        recommendationsLabel.textColor = .primaryTitle
         recommendationsLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 
         collectionView.clipsToBounds = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .primaryBackground
     }
 
     func defineLayoutForViews() {

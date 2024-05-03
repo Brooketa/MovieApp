@@ -815,10 +815,10 @@
 			isa = PBXGroup;
 			children = (
 				70A31B202703273200E275FB /* DetailsHeader */,
-				709AA5802705BD0A004429BD /* DetailsTopBilledCast */,
-				709AA5852705D834004429BD /* DetailsCastCollectionViewCell */,
 				709AA57627049BB3004429BD /* DetailsOverview */,
 				709AA57B27049D97004429BD /* SignificantCrew */,
+				709AA5802705BD0A004429BD /* DetailsTopBilledCast */,
+				709AA5852705D834004429BD /* DetailsCastCollectionViewCell */,
 				70FBB8272711E0CD0053563F /* DetailsReview */,
 				70FBB8282711E0ED0053563F /* DetailsReviewAuthor */,
 				70024085270F997C00713C63 /* DetailsRecommended */,
@@ -1609,7 +1609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQC94HBFAG;
 				INFOPLIST_FILE = MovieApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1630,7 +1630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GQC94HBFAG;
 				INFOPLIST_FILE = MovieApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

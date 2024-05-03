@@ -23,13 +23,13 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
         addShadow()
         contentView.configureRoundedCorners()
 
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .cellBackgroundColor
 
-        castNameLabel.textColor = .black
+        castNameLabel.textColor = .secondaryTitle
         castNameLabel.font = .systemFont(ofSize: 14, weight: .bold)
         castNameLabel.numberOfLines = 0
 
-        castRoleLabel.textColor = .systemGray
+        castRoleLabel.textColor = .grayText
         castRoleLabel.font = .systemFont(ofSize: 11)
         castRoleLabel.numberOfLines = 0
     }

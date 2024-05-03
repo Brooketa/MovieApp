@@ -35,6 +35,8 @@ extension DetailsHeaderView: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        backgroundColor = .primaryBackground
+
         posterImageView.clipsToBounds = true
         posterImageView.contentMode = .scaleAspectFill
 

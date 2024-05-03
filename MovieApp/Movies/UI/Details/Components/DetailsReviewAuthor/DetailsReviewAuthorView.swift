@@ -8,7 +8,7 @@ class DetailsReviewAuthorView: UIView {
     var titleLabel: UILabel!
     var writtenByLabel: UILabel!
 
-    private let blackColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+    private let usernameColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.secondaryTitle]
     private let grayColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
 
     init() {
@@ -43,7 +43,7 @@ class DetailsReviewAuthorView: UIView {
 
     private func writtenByAttributedText(authorUsername: String, createdAt: String) -> NSMutableAttributedString {
         let writtenByString = NSMutableAttributedString(string: LocalizableString.detailsWrittenBy.localized)
-        let usernameString = NSAttributedString(string: authorUsername, attributes: blackColorAttributes)
+        let usernameString = NSAttributedString(string: authorUsername, attributes: usernameColorAttributes)
         let dateString = NSAttributedString(string: " on \(createdAt)", attributes: grayColorAttributes)
         writtenByString.append(usernameString)
         writtenByString.append(dateString)

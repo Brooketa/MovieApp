@@ -20,12 +20,13 @@ extension SearchCollectionViewCell: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = .cellBackgroundColor
 
         movieTitleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        movieTitleLabel.textColor = .cellTitle
 
         movieDescriptionLabel.font = UIFont.systemFont(ofSize: 13)
-        movieDescriptionLabel.textColor = .systemGray
+        movieDescriptionLabel.textColor = .grayText
         movieDescriptionLabel.numberOfLines = 0
 
         addShadow()

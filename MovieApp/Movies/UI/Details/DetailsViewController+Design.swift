@@ -36,8 +36,9 @@ extension DetailsViewController: ConstructViewsProtocol {
     }
 
     func styleViews() {
+        setDefaultNavBar()
         setDefaultBackButtonTitle()
-        view.backgroundColor = .white
+        view.backgroundColor = .primaryBackground
 
         scrollView.alwaysBounceVertical = true
         scrollView.alwaysBounceHorizontal = false
