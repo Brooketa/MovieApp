@@ -25,7 +25,7 @@ extension FavoritesViewController: ConstructViewsProtocol {
         setDefaultBackButtonTitle()
         view.backgroundColor = .white
 
-        favoritesLabel.text = "Favorites"
+        favoritesLabel.text = LocalizableString.favoritesTitle.localized
         favoritesLabel.textColor = UIColor.darkBlue
         favoritesLabel.font = .systemFont(ofSize: 20, weight: .bold)
 

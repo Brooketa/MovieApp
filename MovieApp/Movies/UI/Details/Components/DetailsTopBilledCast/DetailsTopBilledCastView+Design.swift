@@ -23,11 +23,11 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        topBilledCastLabel.text = "Top Billed Cast"
+        topBilledCastLabel.text = LocalizableString.detailsTopBilledCastTitle.localized
         topBilledCastLabel.textColor = .darkBlue
         topBilledCastLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 
-        fullCastButton.setTitle("Full Cast & Crew", for: .normal)
+        fullCastButton.setTitle(LocalizableString.detailsFullCastAndCrewButtonTitle.localized, for: .normal)
         fullCastButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
         fullCastButton.setTitleColor(.darkBlue, for: .normal)
         fullCastButton.setTitleColor(.lightGray, for: .highlighted)

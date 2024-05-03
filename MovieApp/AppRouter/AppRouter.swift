@@ -34,12 +34,12 @@ class AppRouter: AppRouterProtocol {
         let favoritesViewController: FavoritesViewController = container.resolve()
 
         homeViewController.tabBarItem = createTabBarItem(
-            title: "Favorites",
+            title: LocalizableString.homeTitle.localized,
             selectedImageName: "home-selected",
             deselectedImageName: "home-deselected")
 
         favoritesViewController.tabBarItem = createTabBarItem(
-            title: "Favorites",
+            title: LocalizableString.favoritesTitle.localized,
             selectedImageName: "favorites-selected",
             deselectedImageName: "favorites-deselected")
 

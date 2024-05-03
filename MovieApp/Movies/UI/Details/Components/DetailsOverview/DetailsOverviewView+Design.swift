@@ -20,7 +20,7 @@ extension DetailsOverviewView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        overviewLabel.text = "Overview"
+        overviewLabel.text = LocalizableString.detailsOverviewTitle.localized
         overviewLabel.textColor = .darkBlue
         overviewLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 

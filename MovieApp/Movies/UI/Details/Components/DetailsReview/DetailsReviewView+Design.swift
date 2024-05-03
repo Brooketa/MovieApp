@@ -20,7 +20,7 @@ extension DetailsReviewView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        socialLabel.text = "Social"
+        socialLabel.text = LocalizableString.detailsSocialTitle.localized
         socialLabel.textColor = .darkBlue
         socialLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 

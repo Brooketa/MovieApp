@@ -42,7 +42,7 @@ class DetailsReviewAuthorView: UIView {
     }
 
     private func writtenByAttributedText(authorUsername: String, createdAt: String) -> NSMutableAttributedString {
-        let writtenByString = NSMutableAttributedString(string: "Written by ")
+        let writtenByString = NSMutableAttributedString(string: LocalizableString.detailsWrittenBy.localized)
         let usernameString = NSAttributedString(string: authorUsername, attributes: blackColorAttributes)
         let dateString = NSAttributedString(string: " on \(createdAt)", attributes: grayColorAttributes)
         writtenByString.append(usernameString)

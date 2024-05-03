@@ -20,7 +20,7 @@ extension DetailsRecommendedView: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        recommendationsLabel.text = "Recommendations"
+        recommendationsLabel.text = LocalizableString.detailsRecommendationsTitle.localized
         recommendationsLabel.textColor = .darkBlue
         recommendationsLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
 

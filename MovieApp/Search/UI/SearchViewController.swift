@@ -46,6 +46,10 @@ class SearchViewController: UIViewController {
         }
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popViewController(animated: false)
+    }
+
     private func configureKeyboardDismissTap() {
         dismissKeyboardView
             .tap

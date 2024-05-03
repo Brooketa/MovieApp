@@ -9,8 +9,8 @@ class DetailsReviewView: UIView {
 
     private var cancellables = Set<AnyCancellable>()
 
-    private let showMore = "show more"
-    private let showLess = "show less"
+    private let showMore = LocalizableString.detailsShowMore.localized
+    private let showLess = LocalizableString.detailsShowLess.localized
 
     private let darkBlueColorAttributes = [NSAttributedString.Key.foregroundColor: UIColor.darkBlue]
 

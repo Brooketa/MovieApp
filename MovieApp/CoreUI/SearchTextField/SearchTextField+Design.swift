@@ -11,7 +11,7 @@ extension SearchTextField: ConstructViewsProtocol {
     func createViews() {}
 
     func styleViews() {
-        placeholder = "Search movies"
+        placeholder = LocalizableString.searchPlaceholder.localized
         backgroundColor = UIColor(rgb: 0xEAEAEB)
         clearButtonMode = .whileEditing
         configureRoundedCorners()

@@ -33,7 +33,7 @@ extension SearchViewController: ConstructViewsProtocol {
 
         view.backgroundColor = .white
 
-        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitle(LocalizableString.cancel.localized, for: .normal)
         cancelButton.setTitleColor(UIColor.darkBlue, for: .normal)
         cancelButton.setTitleColor(UIColor.lightGray, for: .highlighted)
         cancelButton.alpha = 0.0

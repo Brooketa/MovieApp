@@ -161,14 +161,18 @@ class HomeViewController: UIViewController {
 
         switch section {
         case .whatsPopular, .topRated:
-            sectionTitle = section == .whatsPopular ? "What's popular" : "Top rated"
+            if section == .whatsPopular {
+                sectionTitle = LocalizableString.homeWhatsPopular.localized
+            } else {
+                sectionTitle = LocalizableString.homeTopRated.localized
+            }
             sectionHeader.setSubcategories(
                 subcategories: [
                     .action, .adventure, .comedy, .documentary,
                     .drama, .horror, .scienceFiction, .thriller
                 ])
         case .trending:
-            sectionTitle = "Trending"
+            sectionTitle = LocalizableString.homeTrending.localized
             sectionHeader.setSubcategories(
                 subcategories: [.today, .week])
         }

@@ -14,25 +14,25 @@ enum Subcategory: Int {
     var description: String {
         switch self {
         case .action:
-            return "Action"
+            return LocalizableString.homeActionSubcategory.localized
         case .adventure:
-            return "Adventure"
+            return LocalizableString.homeAdventureSubcategory.localized
         case .comedy:
-            return "Comedy"
+            return LocalizableString.homeComedySubcategory.localized
         case .drama:
-            return "Drama"
+            return LocalizableString.homeDramaSubcategory.localized
         case .documentary:
-            return "Documentary"
+            return LocalizableString.homeDocumentarySubcategory.localized
         case .horror:
-            return "Horror"
+            return LocalizableString.homeHorrorSubcategory.localized
         case .scienceFiction:
-            return "Science Fiction"
+            return LocalizableString.homeScienceFictionSubcategory.localized
         case .thriller:
-            return "Thriller"
+            return LocalizableString.homeThrillerSubcategory.localized
         case .today:
-            return "Today"
+            return LocalizableString.homeTodaySubcategory.localized
         case .week:
-            return "Week"
+            return LocalizableString.homeWeekSubcategory.localized
         }
     }
 

@@ -40,7 +40,7 @@ extension DetailsHeaderView: ConstructViewsProtocol {
 
         gradientView.alpha = 0.0
 
-        userScoreLabel.text = "User Score"
+        userScoreLabel.text = LocalizableString.detailsUserScore.localized
         userScoreLabel.textColor = .white
         userScoreLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 

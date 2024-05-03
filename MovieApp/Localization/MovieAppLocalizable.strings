@@ -1,0 +1,30 @@
+"cancel" = "Cancel";
+
+"home.title" = "Home";
+"home.whatsPopular" = "What's popular";
+"home.topRated" = "Top rated";
+"home.trending" = "Trending";
+"home.actionSubcategory" = "Action";
+"home.adventureSubcategory" = "Adventure";
+"home.comedySubcategory" = "Comedy";
+"home.documentarySubcategory" = "Documentary";
+"home.dramaSubcategory" = "Drama";
+"home.horrorSubcategory" = "Horror";
+"home.scienceFictionSubcategory" = "Science Fiction";
+"home.thrillerSubcategory" = "Thriller";
+"home.todaySubcategory" = "Today";
+"home.weekSubcategory" = "Week";
+
+"details.userScore" = "User score";
+"details.overviewTitle" = "Overview";
+"details.topBilledCastTitle" = "Top Billed Cast";
+"details.socialTitle" = "Social";
+"details.recommendationsTitle" = "Recommendations";
+"details.fullCastAndCrewButtonTitle" = "Full Cast & Crew";
+"details.showMore" = "show more";
+"details.showLess" = "show less";
+"details.writtenBy" = "Written by ";
+
+"search.placeholder" = "Search movies";
+
+"favorites.title" = "Favorites";
