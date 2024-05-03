@@ -24,14 +24,14 @@ extension DetailsOverviewView: ConstructViewsProtocol {
 
         overviewLabel.text = LocalizableString.detailsOverviewTitle.localized
         overviewLabel.textColor = .primaryTitle
-        overviewLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        overviewLabel.font = .heading1
 
         descriptionLabel.textColor = .text
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+        descriptionLabel.font = .textRegular
         descriptionLabel.numberOfLines = 0
 
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 30
     }

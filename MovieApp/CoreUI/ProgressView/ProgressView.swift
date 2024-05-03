@@ -5,8 +5,8 @@ class ProgressView: UIView {
     var progressLayer: CAShapeLayer!
     var progressLabel: UILabel!
 
-    private let progressValueAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .heavy)]
-    private let percentAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 9, weight: .regular)]
+    private let progressValueAttributes = [NSAttributedString.Key.font: UIFont.heading3Heavy]
+    private let percentAttributes = [NSAttributedString.Key.font: UIFont.textVerySmall]
 
     init() {
         super.init(frame: .zero)

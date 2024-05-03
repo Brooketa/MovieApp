@@ -27,10 +27,10 @@ extension DetailsTopBilledCastView: ConstructViewsProtocol {
 
         topBilledCastLabel.text = LocalizableString.detailsTopBilledCastTitle.localized
         topBilledCastLabel.textColor = .primaryTitle
-        topBilledCastLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        topBilledCastLabel.font = .heading1
 
         fullCastButton.setTitle(LocalizableString.detailsFullCastAndCrewButtonTitle.localized, for: .normal)
-        fullCastButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        fullCastButton.titleLabel?.font = .textBold
         fullCastButton.setTitleColor(.primaryTitle, for: .normal)
         fullCastButton.setTitleColor(.lightGray, for: .highlighted)
         fullCastButton.titleLabel?.textAlignment = .right

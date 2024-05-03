@@ -15,8 +15,8 @@ class DetailsHeaderView: UIView {
 
     var favoriteButton: FavoriteButton!
 
-    private let titleYearAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .regular)]
-    private let durationAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)]
+    private let titleYearAttributes = [NSAttributedString.Key.font: UIFont.movieTitleRegular]
+    private let durationAttributes = [NSAttributedString.Key.font: UIFont.textBold]
 
     init() {
         super.init(frame: .zero)

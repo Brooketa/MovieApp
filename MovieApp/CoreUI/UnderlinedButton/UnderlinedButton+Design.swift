@@ -33,11 +33,11 @@ extension UnderlinedButton: ConstructViewsProtocol {
     }
 
     func setFontToBold() {
-        titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        titleLabel?.font = .heading3Bold
     }
 
     func setFontToRegular() {
-        titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        titleLabel?.font = .heading3
     }
 
 }

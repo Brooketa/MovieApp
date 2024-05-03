@@ -26,7 +26,7 @@ extension HomeSectionHeader: ConstructViewsProtocol {
         stackView.axis = .vertical
 
         sectionTitleLabel.textColor = .primaryTitle
-        sectionTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        sectionTitleLabel.font = .heading1
     }
 
     func defineLayoutForViews() {

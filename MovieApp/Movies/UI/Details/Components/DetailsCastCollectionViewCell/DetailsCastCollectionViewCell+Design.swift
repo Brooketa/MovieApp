@@ -26,11 +26,11 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
         contentView.backgroundColor = .cellBackgroundColor
 
         castNameLabel.textColor = .secondaryTitle
-        castNameLabel.font = .systemFont(ofSize: 14, weight: .bold)
+        castNameLabel.font = .textBold
         castNameLabel.numberOfLines = 0
 
         castRoleLabel.textColor = .grayText
-        castRoleLabel.font = .systemFont(ofSize: 11)
+        castRoleLabel.font = .textSmall
         castRoleLabel.numberOfLines = 0
     }
 

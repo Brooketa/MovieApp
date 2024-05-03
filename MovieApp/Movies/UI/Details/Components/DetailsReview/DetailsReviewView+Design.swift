@@ -24,10 +24,10 @@ extension DetailsReviewView: ConstructViewsProtocol {
 
         socialLabel.text = LocalizableString.detailsSocialTitle.localized
         socialLabel.textColor = .primaryTitle
-        socialLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        socialLabel.font = .heading1
 
         contentLabel.textColor = .grayText
-        contentLabel.font = .systemFont(ofSize: 14)
+        contentLabel.font = .textRegular
         contentLabel.numberOfLines = 0
         contentLabel.lineBreakMode = .byTruncatingTail
         contentLabel.isUserInteractionEnabled = true

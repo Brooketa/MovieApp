@@ -24,7 +24,7 @@ extension DetailsRecommendedView: ConstructViewsProtocol {
 
         recommendationsLabel.text = LocalizableString.detailsRecommendationsTitle.localized
         recommendationsLabel.textColor = .primaryTitle
-        recommendationsLabel.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        recommendationsLabel.font = .heading1
 
         collectionView.clipsToBounds = false
         collectionView.backgroundColor = .primaryBackground

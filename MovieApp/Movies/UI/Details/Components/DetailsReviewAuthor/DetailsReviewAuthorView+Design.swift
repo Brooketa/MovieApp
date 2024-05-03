@@ -28,11 +28,11 @@ extension DetailsReviewAuthorView: ConstructViewsProtocol {
         stackView.spacing = 10
 
         titleLabel.textColor = .secondaryTitle
-        titleLabel.font = .systemFont(ofSize: 18, weight: .bold)
+        titleLabel.font = .textLarge
         titleLabel.numberOfLines = 0
 
         writtenByLabel.textColor = .grayText
-        writtenByLabel.font = .systemFont(ofSize: 14)
+        writtenByLabel.font = .textRegular
         writtenByLabel.numberOfLines = 0
     }
 

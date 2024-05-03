@@ -21,7 +21,7 @@ extension DetailsRecommendedCollectionViewCell: ConstructViewsProtocol {
         backdropImageView.configureRoundedCorners()
 
         movieTitleLabel.textColor = .primaryTitle
-        movieTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        movieTitleLabel.font = .heading2Bold
     }
 
     func defineLayoutForViews() {

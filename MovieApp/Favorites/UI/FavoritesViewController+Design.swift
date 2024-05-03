@@ -27,7 +27,7 @@ extension FavoritesViewController: ConstructViewsProtocol {
 
         favoritesLabel.text = LocalizableString.favoritesTitle.localized
         favoritesLabel.textColor = UIColor.primaryTitle
-        favoritesLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        favoritesLabel.font = .heading1
 
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .primaryBackground

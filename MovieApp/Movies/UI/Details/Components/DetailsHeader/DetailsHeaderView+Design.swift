@@ -44,20 +44,19 @@ extension DetailsHeaderView: ConstructViewsProtocol {
 
         userScoreLabel.text = LocalizableString.detailsUserScore.localized
         userScoreLabel.textColor = .white
-        userScoreLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        userScoreLabel.font = .textBold
 
         titleLabel.textColor = .white
         titleLabel.textAlignment = .left
         titleLabel.numberOfLines = 0
-        titleLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-
+        titleLabel.font = .movieTitleBold
         dateReleasedLabel.textColor = .white
         dateReleasedLabel.textAlignment = .left
-        dateReleasedLabel.font = UIFont.systemFont(ofSize: 14)
+        dateReleasedLabel.font = .textRegular
 
         genresLabel.textColor = .white
         genresLabel.textAlignment = .left
-        genresLabel.font = UIFont.systemFont(ofSize: 14)
+        genresLabel.font = .textRegular
         genresLabel.numberOfLines = 0
     }
 
