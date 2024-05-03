@@ -87,7 +87,7 @@ class SearchViewController: UIViewController {
                 guard let self = self else { return Empty<[SearchMovieViewModel], Never>().eraseToAnyPublisher() }
 
                 return self.searchPresenter
-                    .searchMovies(query: text)
+                    .searchMovies(query: text.replacingOccurrences(of: " ", with: "%20"))
             }
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] searchedMovies in
                 guard let self = self else { return }

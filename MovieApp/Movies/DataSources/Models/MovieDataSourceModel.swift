@@ -10,7 +10,7 @@ struct MovieDataSourceModel {
         movieID = model.movieID
         movieTitle = model.movieTitle
         movieDescription = model.movieDescription
-        moviePosterImagePath = APIConstants.posterImageRootURL + model.moviePosterImagePath
+        moviePosterImagePath = APIConstants.imageBaseURL + model.moviePosterImagePath
         movieGenres = model.movieGenres
     }
 

@@ -5,7 +5,7 @@ struct FavoritesMovieDataModel {
 
     init(from model: FavoritesMovieResponse) {
         movieID = model.movieID
-        moviePosterImagePath = APIConstants.posterImageRootURL + model.moviePosterImagePath
+        moviePosterImagePath = APIConstants.imageBaseURL + model.moviePosterImagePath
     }
 
 }

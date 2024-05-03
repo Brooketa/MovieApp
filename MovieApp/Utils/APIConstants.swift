@@ -1,53 +1,25 @@
 struct APIConstants {
 
-    static let popularURL = """
-https://api.themoviedb.org\
-/3/movie/popular?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let baseURL = "https://api.themoviedb.org/3"
 
-    static let topRatedURL = """
-https://api.themoviedb.org\
-/3/movie/top_rated?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let imageBaseURL = "https://image.tmdb.org/t/p/w500"
 
-    static let trendingURL = """
-https://api.themoviedb.org\
-/3/trending/movie/week?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let apiKey = "api_key=996a548079728d26102931bab18885f2"
 
-    static let movieURL = """
-https://api.themoviedb.org\
-/3/movie/%d?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let popularEndpoint = "/movie/popular?"
 
-    static let castURL = """
-https://api.themoviedb.org\
-/3/movie/%d/credits?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let topRatedEndpoint = "/movie/top_rated?"
 
-    static let reviewURL = """
-https://api.themoviedb.org\
-/3/movie/%d/reviews?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let trendingEndpoint = "/trending/movie/week?"
 
-    static let recommendedURL = """
-https://api.themoviedb.org\
-/3/movie/%d/recommendations?\
-api_key=996a548079728d26102931bab18885f2
-"""
+    static let movieEndpoint = "/movie/%@?"
 
-    static let searchURL = """
-https://api.themoviedb.org\
-/3/search/movie?\
-api_key=996a548079728d26102931bab18885f2&query=
-"""
+    static let castEndpoint = "/movie/%@/credits?"
 
-    static let posterImageRootURL = "https://image.tmdb.org/t/p/w500"
+    static let reviewEndpoint = "/movie/%@/reviews?"
+
+    static let recommendedEndpoint = "/movie/%@/recommendations?"
+
+    static let searchEndpoint = "/search/movie?api_key=996a548079728d26102931bab18885f2&query=%@"
 
 }

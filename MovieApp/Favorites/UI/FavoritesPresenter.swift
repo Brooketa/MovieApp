@@ -6,10 +6,10 @@ class FavoritesPresenter {
     private let favoritesUseCase: FavoritesUseCaseProtocol
     private let appRouter: AppRouterProtocol
 
-    var favoriteMovies: AnyPublisher<FavoritesMovieViewModel, Error> {
+    var favoriteMovies: AnyPublisher<[FavoritesMovieViewModel], Error> {
         favoritesUseCase
             .fetchFavoriteMovies
-            .map { FavoritesMovieViewModel(from: $0) }
+            .map { $0.map { FavoritesMovieViewModel(from: $0) } }
             .receive(on: RunLoop.main, options: nil)
             .eraseToAnyPublisher()
     }

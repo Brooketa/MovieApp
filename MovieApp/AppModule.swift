@@ -34,22 +34,27 @@ private extension AppModule {
 
     private func registerClients(in container: Resolver) {
         container
-            .register { MovieClient() }
+            .register { BaseClient() }
+            .implements(BaseClientProtocol.self)
+            .scope(.application)
+
+        container
+            .register { MovieClient(baseClient: container.resolve()) }
             .implements(MovieClientProtocol.self)
             .scope(.application)
 
         container
-            .register { DetailsClient() }
+            .register { DetailsClient(baseClient: container.resolve()) }
             .implements(DetailsClientProtocol.self)
             .scope(.application)
 
         container
-            .register { SearchClient() }
+            .register { SearchClient(baseClient: container.resolve()) }
             .implements(SearchClientProtocol.self)
             .scope(.application)
 
         container
-            .register { FavoritesClient() }
+            .register { FavoritesClient(baseClient: container.resolve()) }
             .implements(FavoritesClientProtocol.self)
             .scope(.application)
     }

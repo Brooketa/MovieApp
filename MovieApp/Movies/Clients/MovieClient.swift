@@ -3,67 +3,25 @@ import Foundation
 
 class MovieClient: MovieClientProtocol {
 
-    func fetchPopularMovies() -> AnyPublisher<[MovieClientModel], Error> {
-        guard let url = URL(string: APIConstants.popularURL) else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
-        }
+    let baseClient: BaseClientProtocol
 
-        return URLSession.shared
-            .dataTaskPublisher(for: url)
-            .tryMap { element -> Data in
-                guard
-                    let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200
-                else {
-                    throw URLError(.badServerResponse)
-                }
-                return element.data
-            }
-            .decode(type: MovieNetworkModel.self, decoder: JSONDecoder())
-            .map { $0.response }
-            .eraseToAnyPublisher()
+    init(baseClient: BaseClientProtocol) {
+        self.baseClient = baseClient
+    }
+
+    func fetchPopularMovies() -> AnyPublisher<[MovieClientModel], Error> {
+        baseClient
+            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getPopular, params: [String]())
     }
 
     func fetchTopRatedMovies() -> AnyPublisher<[MovieClientModel], Error> {
-        guard let url = URL(string: APIConstants.topRatedURL) else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
-        }
-
-        return URLSession.shared
-            .dataTaskPublisher(for: url)
-            .tryMap { element -> Data in
-                guard
-                    let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200
-                else {
-                    throw URLError(.badServerResponse)
-                }
-                return element.data
-            }
-            .decode(type: MovieNetworkModel.self, decoder: JSONDecoder())
-            .map { $0.response }
-            .eraseToAnyPublisher()
+        baseClient
+            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getTopRated, params: [String]())
     }
 
     func fetchTrendingMovies() -> AnyPublisher<[MovieClientModel], Error> {
-        guard let url = URL(string: APIConstants.trendingURL) else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
-        }
-
-        return URLSession.shared
-            .dataTaskPublisher(for: url)
-            .tryMap { element -> Data in
-                guard
-                    let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200
-                else {
-                    throw URLError(.badServerResponse)
-                }
-                return element.data
-            }
-            .decode(type: MovieNetworkModel.self, decoder: JSONDecoder())
-            .map { $0.response }
-            .eraseToAnyPublisher()
+        baseClient
+            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getTrending, params: [String]())
     }
 
 }

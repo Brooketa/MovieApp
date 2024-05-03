@@ -17,7 +17,7 @@ struct DetailsCastDataModel {
             return
         }
 
-        castProfileImagePath = APIConstants.posterImageRootURL + profileImagePath
+        castProfileImagePath = APIConstants.imageBaseURL + profileImagePath
     }
 
 }

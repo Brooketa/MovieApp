@@ -10,14 +10,14 @@ class FavoritesRepository: FavoritesRepositoryProtocol {
         self.favoritesLocalDataSource = favoritesLocalDataSource
     }
 
-    var fetchFavoriteMovies: AnyPublisher<FavoritesMovieRepositoryModel, Error> {
+    var fetchFavoriteMovies: AnyPublisher<[FavoritesMovieRepositoryModel], Error> {
         favoritesLocalDataSource
             .favorites
-            .map { [weak self] favoriteIDs -> AnyPublisher<FavoritesMovieRepositoryModel, Error> in
+            .map { [weak self] favoriteIDs -> AnyPublisher<[FavoritesMovieRepositoryModel], Error> in
                 guard
                     let self = self
                 else {
-                    return Empty<FavoritesMovieRepositoryModel, Error>().eraseToAnyPublisher()
+                    return Empty<[FavoritesMovieRepositoryModel], Error>().eraseToAnyPublisher()
                 }
 
                 let favoriteMovies = favoriteIDs.map {
@@ -29,6 +29,7 @@ class FavoritesRepository: FavoritesRepositoryProtocol {
 
                 return Publishers
                     .MergeMany(favoriteMovies)
+                    .collect()
                     .eraseToAnyPublisher()
             }
             .switchToLatest()

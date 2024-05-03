@@ -8,10 +8,10 @@ class FavoritesUseCase: FavoritesUseCaseProtocol {
         self.favoritesRepository = favoritesRepository
     }
 
-    var fetchFavoriteMovies: AnyPublisher<FavoritesMovieUseCaseModel, Error> {
+    var fetchFavoriteMovies: AnyPublisher<[FavoritesMovieUseCaseModel], Error> {
         favoritesRepository
             .fetchFavoriteMovies
-            .map { FavoritesMovieUseCaseModel(from: $0) }
+            .map { $0.map { FavoritesMovieUseCaseModel(from: $0) }  }
             .eraseToAnyPublisher()
     }
 

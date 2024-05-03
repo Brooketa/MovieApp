@@ -43,8 +43,8 @@ class FavoritesViewController: UIViewController {
             .favoriteMovies
             .sink(
                 receiveCompletion: { _ in },
-                receiveValue: { movie in
-                    self.updateFavoritesDataSource(with: movie)
+                receiveValue: { movies in
+                    self.updateFavoritesDataSource(with: movies)
                 }
             )
             .store(in: &cancellables)
@@ -75,25 +75,24 @@ class FavoritesViewController: UIViewController {
         return favoritesDataSource
     }
 
-    private func updateFavoritesDataSource(with viewModel: FavoritesMovieViewModel) {
-        if !favoritesSnapshot.itemIdentifiers(inSection: FavoritesSection.main).contains(viewModel) {
-            favoritesSnapshot.appendItems([viewModel], toSection: FavoritesSection.main)
-            favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: true, completion: nil)
-        }
+    private func updateFavoritesDataSource(with viewModel: [FavoritesMovieViewModel]) {
+        clearFavoritesDataSource()
+        favoritesSnapshot.appendItems(viewModel, toSection: FavoritesSection.main)
+        favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: false, completion: nil)
     }
 
     private func clearFavoritesDataSource() {
         favoritesSnapshot.deleteItems(favoritesSnapshot.itemIdentifiers(inSection: FavoritesSection.main))
-        favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: true, completion: nil)
+        favoritesDataSource.apply(favoritesSnapshot, animatingDifferences: false, completion: nil)
     }
 
     private func configureFavoriteButtonSubscription(cell: MovieCollectionViewCell, movieID: Int) {
-        cell.favoriteButton
+        cell
+            .favoriteButton
             .tap
             .sink(receiveValue: { [weak self] _ in
                 guard let self = self else { return }
 
-                self.clearFavoritesDataSource()
                 self.favoritesPresenter.toggleFavoriteMovie(movieID: movieID)
             })
             .store(in: &cell.cancellables)

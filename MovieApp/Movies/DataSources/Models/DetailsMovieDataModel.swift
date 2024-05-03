@@ -11,7 +11,7 @@ struct DetailsMovieDataModel {
     init(from model: DetailsMovieResponse) {
         movieTitle = model.movieTitle
         movieDescription = model.movieDescription
-        movieBackdropImagePath = APIConstants.posterImageRootURL + model.movieBackdropImagePath
+        movieBackdropImagePath = APIConstants.imageBaseURL + model.movieBackdropImagePath
         movieGenres = model.movieGenres.map { DetailsMovieGenreDataModel(from: $0) }
         rating = model.rating
         duration = model.duration
