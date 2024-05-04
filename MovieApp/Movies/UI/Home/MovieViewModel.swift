@@ -15,18 +15,18 @@ struct MovieViewModel: Codable, Hashable {
     let moviePosterImageURL: URL?
     let isFavorite: Bool
 
-    init(with model: MovieUseCaseModel) {
-        uuid = UUID()
-        movieID = model.movieID
-        moviePosterImageURL = URL(string: model.moviePosterImagePath)
-        isFavorite = model.isFavorite
-    }
-
     init(uuid: UUID, movieID: Int, moviePosterImageURL: URL?, isFavorite: Bool) {
         self.uuid = uuid
         self.movieID = movieID
         self.moviePosterImageURL = moviePosterImageURL
         self.isFavorite = isFavorite
+    }
+
+    init(with model: MovieUseCaseModel) {
+        uuid = UUID()
+        movieID = model.movieID
+        moviePosterImageURL = URL(string: model.moviePosterImagePath)
+        isFavorite = model.isFavorite
     }
 
 }
