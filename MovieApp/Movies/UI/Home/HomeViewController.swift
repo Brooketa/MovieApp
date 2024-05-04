@@ -126,9 +126,7 @@ class HomeViewController: UIViewController {
         cell
             .favoriteButton
             .tap
-            .sink(receiveValue: { [weak self] _ in
-                guard let self = self else { return }
-
+            .sink(receiveValue: { [unowned self] _ in
                 self.homePresenter.toggleFavoriteMovie(movieID: movieID)
             })
             .store(in: &cell.cancellables)
@@ -201,7 +199,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let viewModel = movieDataSource.itemIdentifier(for: indexPath) else { return }
+        guard 
+            let viewModel = movieDataSource.itemIdentifier(for: indexPath),
+            viewModel.movieID != MovieCollectionViewCellConstants.faultyMovieID
+        else { return }
 
         homePresenter.showDetails(movieID: viewModel.movieID)
     }

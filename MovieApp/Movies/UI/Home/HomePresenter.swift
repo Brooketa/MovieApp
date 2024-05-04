@@ -17,6 +17,7 @@ class HomePresenter: NSObject {
             return movieUseCase
                 .fetchPopularMovies(subcategory: subcategory)
                 .map { $0.map { MovieViewModel(with: $0) } }
+                .map { $0.isEmpty ? [MovieViewModel.emptyModel] : $0 }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
 
@@ -24,6 +25,7 @@ class HomePresenter: NSObject {
             return movieUseCase
                 .fetchTopRatedMovies(subcategory: subcategory)
                 .map { $0.map { MovieViewModel(with: $0) } }
+                .map { $0.isEmpty ? [MovieViewModel.emptyModel] : $0 }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
 
@@ -31,6 +33,7 @@ class HomePresenter: NSObject {
             return movieUseCase
                 .fetchTrendingMovies(subcategory: subcategory)
                 .map { $0.map { MovieViewModel(with: $0) } }
+                .map { $0.isEmpty ? [MovieViewModel.emptyModel] : $0 }
                 .receive(on: DispatchQueue.main)
                 .eraseToAnyPublisher()
         }

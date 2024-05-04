@@ -34,8 +34,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
 
     public func set(viewModel: MovieViewModel) {
-        movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
+        movieImageView.kf.setImage(
+            with: viewModel.moviePosterImageURL,
+            placeholder: UIImage(named: "movie-placeholder"))
         favoriteButton.isSelected = viewModel.isFavorite
+
+        favoriteButton.isHidden = viewModel.movieID == MovieCollectionViewCellConstants.faultyMovieID ? true : false
     }
 
     public func set(viewModel: FavoritesMovieViewModel) {

@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "movie-placeholder.png",
+      "filename" : "movie-placeholder-light copy.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "movie-placeholder 1.png",
       "idiom" : "universal"
     }
   ],

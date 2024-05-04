@@ -19,6 +19,7 @@ extension MovieCollectionViewCell: ConstructViewsProtocol {
     func styleViews() {
         addShadow()
         configureRoundedCorners()
+        movieImageView.clipsToBounds = true
     }
 
     func defineLayoutForViews() {

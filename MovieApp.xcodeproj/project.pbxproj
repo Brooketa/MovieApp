@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -128,6 +128,7 @@
 		70A31B1A270321C300E275FB /* DetailsViewController+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B19270321C300E275FB /* DetailsViewController+Design.swift */; };
 		70A31B1D2703228900E275FB /* DetailsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B1C2703228900E275FB /* DetailsHeaderView.swift */; };
 		70A31B1F2703229600E275FB /* DetailsHeaderView+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A31B1E2703229600E275FB /* DetailsHeaderView+Design.swift */; };
+		70A4E58B2BE6AE4500E1CA52 /* MovieCollectionViewCellConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4E58A2BE6AE4500E1CA52 /* MovieCollectionViewCellConstants.swift */; };
 		70AB75BF26FB2D690023EBF1 /* GesturePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */; };
 		70AB75C026FB2D690023EBF1 /* GestureSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */; };
 		70AB75C126FB2D690023EBF1 /* GestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AB75BE26FB2D690023EBF1 /* GestureType.swift */; };
@@ -318,6 +319,7 @@
 		70A31B19270321C300E275FB /* DetailsViewController+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+Design.swift"; sourceTree = "<group>"; };
 		70A31B1C2703228900E275FB /* DetailsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeaderView.swift; sourceTree = "<group>"; };
 		70A31B1E2703229600E275FB /* DetailsHeaderView+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsHeaderView+Design.swift"; sourceTree = "<group>"; };
+		70A4E58A2BE6AE4500E1CA52 /* MovieCollectionViewCellConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCellConstants.swift; sourceTree = "<group>"; };
 		70AB75BC26FB2D690023EBF1 /* GesturePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePublisher.swift; sourceTree = "<group>"; };
 		70AB75BD26FB2D690023EBF1 /* GestureSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureSubscription.swift; sourceTree = "<group>"; };
 		70AB75BE26FB2D690023EBF1 /* GestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureType.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 			children = (
 				70DA250426F34E480045B7EA /* MovieCollectionViewCell.swift */,
 				70DA250626F363710045B7EA /* MovieCollectionViewCell+Design.swift */,
+				70A4E58A2BE6AE4500E1CA52 /* MovieCollectionViewCellConstants.swift */,
 			);
 			path = MovieColletionViewCell;
 			sourceTree = "<group>";
@@ -1335,6 +1338,7 @@
 				70721331270738E7002CD49A /* UIColor+Extensions.swift in Sources */,
 				70807FEB26E8CDB100FCC5AA /* MovieViewModel.swift in Sources */,
 				7086AE9D270CB7D100317B0C /* DetailsViewModel.swift in Sources */,
+				70A4E58B2BE6AE4500E1CA52 /* MovieCollectionViewCellConstants.swift in Sources */,
 				70752CF3271DB42A003FA8DC /* FavoritesMovieRepositoryModel.swift in Sources */,
 				70752CFE271DBF58003FA8DC /* FavoritesSection.swift in Sources */,
 				7086AE7B270B74C600317B0C /* DetailsCastRepositoryModel.swift in Sources */,
