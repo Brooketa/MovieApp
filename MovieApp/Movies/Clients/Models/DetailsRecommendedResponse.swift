@@ -2,7 +2,7 @@ struct DetailsRecommendedResponse: Decodable {
 
     let movieID: Int
     let title: String
-    let backdropImagePath: String
+    let backdropImagePath: String?
 
     enum CodingKeys: String, CodingKey {
         case movieID = "id"

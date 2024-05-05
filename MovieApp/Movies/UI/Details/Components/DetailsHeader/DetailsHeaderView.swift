@@ -39,7 +39,9 @@ class DetailsHeaderView: UIView {
     }
 
     func setHeader(from viewModel: DetailsHeaderViewModel) {
-        posterImageView.kf.setImage(with: viewModel.movieBackdropImageURL)
+        posterImageView.kf.setImage(
+            with: viewModel.movieBackdropImageURL,
+            placeholder: UIImage(named: "movie-header-placeholder"))
         progressView.setProgress(progress: viewModel.rating / 10)
         titleLabel.attributedText = titleAttributedText(title: viewModel.movieTitle, year: viewModel.releaseYear)
         dateReleasedLabel.text = viewModel.releaseDate.description
