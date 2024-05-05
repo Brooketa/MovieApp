@@ -92,6 +92,7 @@ class HomeViewController: UIViewController {
 
                 cell.set(viewModel: movieViewModel)
                 self.configureFavoriteButtonSubscription(cell: cell, movieID: movieViewModel.movieID)
+
                 return cell
             })
 
@@ -122,11 +123,13 @@ class HomeViewController: UIViewController {
         movieDataSource.apply(movieSnapshot, animatingDifferences: false, completion: nil)
     }
 
-    private func configureFavoriteButtonSubscription(cell: MovieCollectionViewCell, movieID: Int) {
+    private func configureFavoriteButtonSubscription(cell: MovieCollectionViewCell, movieID: Int?) {
         cell
             .favoriteButton
             .tap
             .sink(receiveValue: { [unowned self] _ in
+                guard let movieID = movieID else { return }
+
                 self.homePresenter.toggleFavoriteMovie(movieID: movieID)
             })
             .store(in: &cell.cancellables)
@@ -201,10 +204,10 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard 
             let viewModel = movieDataSource.itemIdentifier(for: indexPath),
-            viewModel.movieID != MovieCollectionViewCellConstants.faultyMovieID
+            let movieID = viewModel.movieID
         else { return }
 
-        homePresenter.showDetails(movieID: viewModel.movieID)
+        homePresenter.showDetails(movieID: movieID)
     }
 
 }
