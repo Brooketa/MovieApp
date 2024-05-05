@@ -23,6 +23,7 @@ class AppModule {
 private extension AppModule {
 
     func registerDependencies(in container: Resolver) {
+        registerAppDependencies(in: container)
         registerClients(in: container)
         registerDataSources(in: container)
         registerRepositories(in: container)
@@ -32,9 +33,28 @@ private extension AppModule {
         registerAppRouter(in: container)
     }
 
+    private func registerAppDependencies(in container: Resolver) {
+        container
+            .register(String.self, name: Resolver.Name(NetworkDependencies.apiBaseURL.rawValue)) {
+                (Bundle.main.infoDictionary?["ApiBaseURL"] as? String) ?? ""
+            }
+            .scope(.application)
+
+        container
+            .register(String.self, name: Resolver.Name(NetworkDependencies.apiKey.rawValue)) {
+                (Bundle.main.infoDictionary?["ApiKey"] as? String) ?? ""
+            }
+            .scope(.application)
+    }
+
     private func registerClients(in container: Resolver) {
         container
-            .register { BaseClient() }
+            .register { 
+                BaseClient(
+                    baseURL: container.resolve(name: Resolver.Name(NetworkDependencies.apiBaseURL.rawValue)),
+                    apiKey: container.resolve(name: Resolver.Name(NetworkDependencies.apiKey.rawValue)),
+                    urlSession: URLSession.shared)
+            }
             .implements(BaseClientProtocol.self)
             .scope(.application)
 

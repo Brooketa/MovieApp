@@ -11,25 +11,28 @@ class DetailsClient: DetailsClientProtocol {
 
     func fetchMovie(movieID: Int) -> AnyPublisher<DetailsMovieResponse, Error> {
         baseClient
-            .exec(itemsKeyPath: \DetailsMovieResponse.self, requestType: .getMovie, params: ["\(movieID)"])
+            .get(path: "\(APIConstants.movieEndpoint)/\(movieID)", itemsKeyPath: \DetailsMovieResponse.self)
     }
 
     func fetchCast(movieID: Int) -> AnyPublisher<[DetailsCastResponse], Error> {
         baseClient
-            .exec(itemsKeyPath: \DetailsCastNetworkResponse.cast, requestType: .getCast, params: ["\(movieID)"])
+            .get(
+                path: "\(APIConstants.movieEndpoint)/\(movieID)\(APIConstants.creditsEndpoint)",
+                itemsKeyPath: \DetailsCastNetworkResponse.cast)
     }
 
     func fetchReviews(movieID: Int) -> AnyPublisher<[DetailsReviewResponse], Error> {
         baseClient
-            .exec(itemsKeyPath: \DetailsReviewNetworkResponse.reviews, requestType: .getReview, params: ["\(movieID)"])
+            .get(
+                path: "\(APIConstants.movieEndpoint)/\(movieID)\(APIConstants.reviewEndpoint)",
+                itemsKeyPath: \DetailsReviewNetworkResponse.reviews)
     }
 
     func fetchRecommended(movieID: Int) -> AnyPublisher<[DetailsRecommendedResponse], Error> {
         baseClient
-            .exec(
-                itemsKeyPath: \DetailsRecommendedNetworkResponse.recommended,
-                requestType: .getRecommended,
-                params: ["\(movieID)"])
+            .get(
+                path: "\(APIConstants.movieEndpoint)/\(movieID)\(APIConstants.recommendedEndpoint)",
+                itemsKeyPath: \DetailsRecommendedNetworkResponse.recommended)
     }
 
 }

@@ -11,7 +11,10 @@ class SearchClient: SearchClientProtocol {
 
     func searchMovies(query: String) -> AnyPublisher<[SearchResponse], Error> {
         baseClient
-            .exec(itemsKeyPath: \SearchNetworkResponse.response, requestType: .getSearchMovie, params: [query])
+            .get(
+                path: APIConstants.searchEndpoint,
+                itemsKeyPath: \SearchNetworkResponse.response,
+                params: ["query": query])
     }
 
 }
