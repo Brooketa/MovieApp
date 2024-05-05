@@ -127,8 +127,11 @@ class HomeViewController: UIViewController {
         cell
             .favoriteButton
             .tap
-            .sink(receiveValue: { [unowned self] _ in
-                guard let movieID = movieID else { return }
+            .sink(receiveValue: { [weak self] _ in
+                guard 
+                    let self,
+                    let movieID = movieID
+                else { return }
 
                 self.homePresenter.toggleFavoriteMovie(movieID: movieID)
             })
