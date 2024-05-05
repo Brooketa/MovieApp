@@ -11,7 +11,7 @@ class FavoritesClient: FavoritesClientProtocol {
 
     func fetchFavoriteMovie(movieID: Int) -> AnyPublisher<FavoritesMovieResponse, Error> {
         baseClient
-            .exec(itemsKeyPath: \FavoritesMovieResponse.self, requestType: .getMovie, params: ["\(movieID)"])
+            .get(path: "\(APIConstants.movieEndpoint)/\(movieID)", itemsKeyPath: \FavoritesMovieResponse.self)
     }
 
 }

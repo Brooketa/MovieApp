@@ -11,17 +11,17 @@ class MovieClient: MovieClientProtocol {
 
     func fetchPopularMovies() -> AnyPublisher<[MovieClientModel], Error> {
         baseClient
-            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getPopular, params: [String]())
+            .get(path: APIConstants.popularEndpoint, itemsKeyPath: \MovieNetworkModel.response)
     }
 
     func fetchTopRatedMovies() -> AnyPublisher<[MovieClientModel], Error> {
         baseClient
-            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getTopRated, params: [String]())
+            .get(path: APIConstants.topRatedEndpoint, itemsKeyPath: \MovieNetworkModel.response)
     }
 
     func fetchTrendingMovies() -> AnyPublisher<[MovieClientModel], Error> {
         baseClient
-            .exec(itemsKeyPath: \MovieNetworkModel.response, requestType: .getTrending, params: [String]())
+            .get(path: APIConstants.trendingEndpoint, itemsKeyPath: \MovieNetworkModel.response)
     }
 
 }
