@@ -3,11 +3,7 @@ import UIKit
 struct MovieViewModel: Codable, Hashable {
 
     static var emptyModel: MovieViewModel {
-        MovieViewModel(
-            uuid: UUID(),
-            movieID: nil,
-            moviePosterImageURL: nil,
-            isFavorite: false)
+        MovieViewModel(uuid: UUID(), movieID: nil, moviePosterImageURL: nil, isFavorite: false)
     }
 
     let uuid: UUID
