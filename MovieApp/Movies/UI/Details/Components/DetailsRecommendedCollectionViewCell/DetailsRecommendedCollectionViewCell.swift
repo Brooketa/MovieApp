@@ -29,7 +29,9 @@ class DetailsRecommendedCollectionViewCell: UICollectionViewCell {
     }
 
     func set(viewModel: RecommendedMovieViewModel) {
-        backdropImageView.kf.setImage(with: viewModel.backdropImageURL)
+        backdropImageView.kf.setImage(
+            with: viewModel.backdropImageURL,
+            placeholder: UIImage(named: "movie-recommended-placeholder"))
         movieTitleLabel.text = viewModel.title
     }
 

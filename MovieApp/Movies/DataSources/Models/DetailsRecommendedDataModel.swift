@@ -7,7 +7,7 @@ struct DetailsRecommendedDataModel {
     init(from model: DetailsRecommendedResponse) {
         movieID = model.movieID
         title = model.title
-        backdropImagePath = APIConstants.imageBaseURL + model.backdropImagePath
+        backdropImagePath = APIConstants.imageBaseURL + (model.backdropImagePath ?? "")
     }
 
 }

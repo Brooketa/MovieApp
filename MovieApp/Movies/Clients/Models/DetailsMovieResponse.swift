@@ -2,7 +2,7 @@ struct DetailsMovieResponse: Decodable {
 
     let movieTitle: String
     let movieDescription: String
-    let movieBackdropImagePath: String
+    let movieBackdropImagePath: String?
     let movieGenres: [DetailsMovieGenreResponse]
     let rating: Double
     let duration: Int
