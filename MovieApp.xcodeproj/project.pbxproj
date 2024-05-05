@@ -650,13 +650,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		70807FF126EA33F300FCC5AA /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		7086AE9E270CB8CA00317B0C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -967,7 +960,6 @@
 				7072132A270738E7002CD49A /* Extensions */,
 				705211772729EBE00056F282 /* Localization */,
 				7020B89826F8790400B326E2 /* Shared */,
-				70807FF126EA33F300FCC5AA /* Utils */,
 				70A31B102702501500E275FB /* CoreUI */,
 				7027C7E027075A290011E675 /* Movies */,
 				70FF62AD2BE7E01D00B4DE37 /* Networking */,
