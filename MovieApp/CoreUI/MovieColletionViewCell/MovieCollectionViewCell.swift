@@ -25,6 +25,8 @@ class MovieCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         cancellables = Set<AnyCancellable>()
+
+        favoriteButton.isHidden = false
     }
 
     public override func didMoveToSuperview() {
@@ -34,8 +36,12 @@ class MovieCollectionViewCell: UICollectionViewCell {
     }
 
     public func set(viewModel: MovieViewModel) {
-        movieImageView.kf.setImage(with: viewModel.moviePosterImageURL)
+        movieImageView.kf.setImage(
+            with: viewModel.moviePosterImageURL,
+            placeholder: UIImage(named: "movie-placeholder"))
         favoriteButton.isSelected = viewModel.isFavorite
+
+        favoriteButton.isHidden = viewModel.movieID == nil ? true : false
     }
 
     public func set(viewModel: FavoritesMovieViewModel) {

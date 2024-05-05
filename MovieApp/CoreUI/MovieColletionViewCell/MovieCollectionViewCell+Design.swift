@@ -17,7 +17,6 @@ extension MovieCollectionViewCell: ConstructViewsProtocol {
     }
 
     func styleViews() {
-        addShadow()
         configureRoundedCorners()
     }
 
