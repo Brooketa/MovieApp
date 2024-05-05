@@ -25,6 +25,9 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
 
         contentView.backgroundColor = .cellBackgroundColor
 
+        castImageView.contentMode = .scaleAspectFill
+        castImageView.clipsToBounds = true
+
         castNameLabel.textColor = .secondaryTitle
         castNameLabel.font = .textBold
         castNameLabel.numberOfLines = 0
@@ -41,12 +44,12 @@ extension DetailsCastCollectionViewCell: ConstructViewsProtocol {
         }
 
         castNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(castImageView.snp.bottom).offset(5)
+            make.top.equalTo(castImageView.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview().inset(10)
         }
 
         castRoleLabel.snp.makeConstraints { make in
-            make.top.equalTo(castNameLabel.snp.bottom)
+            make.top.greaterThanOrEqualTo(castNameLabel.snp.bottom)
             make.leading.trailing.bottom.equalToSuperview().inset(10)
         }
     }

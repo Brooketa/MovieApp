@@ -19,6 +19,7 @@ extension SignificantCrewView: ConstructViewsProtocol {
     func styleViews() {
         nameLabel.textColor = .secondaryTitle
         nameLabel.font = .textHeavy
+        nameLabel.numberOfLines = 0
 
         roleLabel.textColor = .text
         roleLabel.font = .textRegular
@@ -30,8 +31,9 @@ extension SignificantCrewView: ConstructViewsProtocol {
         }
 
         roleLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+            make.top.greaterThanOrEqualTo(nameLabel.snp.bottom).offset(10)
             make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(17)
         }
     }
 
