@@ -425,13 +425,14 @@
 			path = DetailsRecommendedCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		7020B89826F8790400B326E2 /* Shared */ = {
+		7020B89826F8790400B326E2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7072132A270738E7002CD49A /* Extensions */,
 				70AB75C226FB2D6D0023EBF1 /* GesturePublisher */,
 				70B404B826E79EDA0012F23E /* ConstructViewsProtocol.swift */,
 			);
-			path = Shared;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		7027C7E027075A290011E675 /* Movies */ = {
@@ -957,14 +958,13 @@
 			isa = PBXGroup;
 			children = (
 				70532C4926EF88B10010AF2F /* AppRouter */,
-				7072132A270738E7002CD49A /* Extensions */,
-				705211772729EBE00056F282 /* Localization */,
-				7020B89826F8790400B326E2 /* Shared */,
+				7020B89826F8790400B326E2 /* Core */,
 				70A31B102702501500E275FB /* CoreUI */,
+				7086C8CA2718D919003C7C66 /* Favorites */,
+				705211772729EBE00056F282 /* Localization */,
 				7027C7E027075A290011E675 /* Movies */,
 				70FF62AD2BE7E01D00B4DE37 /* Networking */,
 				70B404B526E79E180012F23E /* Search */,
-				7086C8CA2718D919003C7C66 /* Favorites */,
 				70E57C9B26E73C8600A5E9D2 /* AppDelegate.swift */,
 				70532C4126EF507D0010AF2F /* AppModule.swift */,
 				70E57CA426E73C8700A5E9D2 /* Assets.xcassets */,
