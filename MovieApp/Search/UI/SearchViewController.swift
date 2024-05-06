@@ -69,10 +69,8 @@ class SearchViewController: UIViewController {
     }
 
     private func configureTextFieldSubscription() {
-        NotificationCenter
-            .default
-            .publisher(for: UITextField.textDidChangeNotification, object: searchTextField)
-            .map { ($0.object as? UITextField)?.text ?? "" }
+        searchTextField
+            .textPublisher
             .debounce(for: 0.5, scheduler: RunLoop.main, options: nil)
             .removeDuplicates()
             .flatMap { [weak self] text -> AnyPublisher<[SearchMovieViewModel], Never> in
